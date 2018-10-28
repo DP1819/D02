@@ -1,0 +1,22 @@
+
+package domain;
+
+import java.util.Set;
+
+public class Endorsable extends Actor {
+
+	// Relationships
+	
+	private Set<Endorsement>	endorsements;
+
+	public Set<Endorsement> getEndorsements() {
+		return endorsements;
+	}
+
+	public void setEndorsements(Set<Endorsement> endorsements) {
+		this.endorsements = endorsements;
+	}
+	
+	
+	
+}

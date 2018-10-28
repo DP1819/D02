@@ -3,6 +3,10 @@ package domain;
 
 import java.util.Set;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
 import org.hibernate.validator.constraints.NotBlank;
 
 public class Curriculum extends DomainEntity {
@@ -17,6 +21,7 @@ public class Curriculum extends DomainEntity {
 
 
 	@NotBlank
+	@Pattern(regexp = "^\\d{6}-([A-Z]|\\d){6}$")
 	public String getTicker() {
 		return this.ticker;
 	}
@@ -25,4 +30,65 @@ public class Curriculum extends DomainEntity {
 		this.ticker = ticker;
 	}
 
+	// Relationships
+	
+	@NotNull
+	@Valid
+	public HandyWorker getHandyWorker() {
+		return handyWorker;
+	}
+	public void setHandyWorker(HandyWorker handyWorker) {
+		this.handyWorker = handyWorker;
+	}
+
+	@NotNull
+	@Valid
+	public PersonalRecord getPersonalRecord() {
+		return personalRecord;
+	}
+	public void setPersonalRecord(PersonalRecord personalRecord) {
+		this.personalRecord = personalRecord;
+	}
+
+	@NotNull
+	@Valid
+	public Set<EducationRecord> getEducationRecords() {
+		return educationRecords;
+	}
+
+	public void setEducationRecords(Set<EducationRecord> educationRecords) {
+		this.educationRecords = educationRecords;
+	}
+
+	@NotNull
+	@Valid
+	public Set<ProfessionalRecord> getProfesionalRecords() {
+		return profesionalRecords;
+	}
+
+	public void setProfesionalRecords(Set<ProfessionalRecord> profesionalRecords) {
+		this.profesionalRecords = profesionalRecords;
+	}
+
+	@NotNull
+	@Valid
+	public Set<EndorserRecord> getEndorserRecords() {
+		return endorserRecords;
+	}
+
+	public void setEndorserRecords(Set<EndorserRecord> endorserRecords) {
+		this.endorserRecords = endorserRecords;
+	}
+
+	@NotNull
+	@Valid
+	public Set<MiscellaneousRecord> getMiscellaneousRecords() {
+		return miscellaneousRecords;
+	}
+
+	public void setMiscellaneousRecords(
+			Set<MiscellaneousRecord> miscellaneousRecords) {
+		this.miscellaneousRecords = miscellaneousRecords;
+	}
+	
 }

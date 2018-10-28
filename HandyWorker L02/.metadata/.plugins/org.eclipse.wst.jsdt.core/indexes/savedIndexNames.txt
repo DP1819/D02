@@ -1,0 +1,6 @@
+INDEX VERSION 1.122+E:\D02\D02\HandyWorker L02\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2520529877.index
+2890148791.index
+2558929030.index
+3848639550.index
+1780998746.index

@@ -1,0 +1,5 @@
+INDEX VERSION 1.126
+E:\D02\D02\HandyWorker L02\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1107489158.index
+\Sample-Project-1.18.1\src\main\java
+E:\D02\D02\HandyWorker L02\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2430344996.index
+\Sample-Project-1.18.1\src\main\java
