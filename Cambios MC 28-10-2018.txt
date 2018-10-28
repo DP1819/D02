@@ -1,0 +1,8 @@
+Realizados
+
+- El atributo make en HandyWorker no es derivado, puesto a que el HandyWorker decide el valor de make.
+- El atributo suspicious en Actor es derivado, puesto a que se obtiene a partir del contenido que ha escrito el Actor.
+- El atributo system en Folder es derivado, pues ningún usuario puede decidir sobre el valor del atributo. Se ha añadido la anotación que indica cuándo una carpeta debe considerarse una carpeta del sistema.
+- Se ha explicitado la cardinalidad 1 en las asociaciones.
+- Corregido pattern del atributo email de Actor. Ahora permite guiones bajos y el pattern es más compacto.
+- Se ha incluido una anotación que indica que el precio propuesto en la Application no puede ser mayor que el precio máximo especificado en la FixupTask.
