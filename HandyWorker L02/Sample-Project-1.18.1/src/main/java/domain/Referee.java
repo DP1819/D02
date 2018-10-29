@@ -5,9 +5,13 @@ import java.util.Set;
 
 public class Referee extends Actor {
 
+	//----------Relaciones-----------
+
 	private Set<Note>	notes;
 	private Set<Report>	reports;
 
+
+	//----------Getters y Setters-------
 
 	public Set<Note> getNotes() {
 		return this.notes;

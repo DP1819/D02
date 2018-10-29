@@ -9,13 +9,20 @@ import org.hibernate.validator.constraints.NotBlank;
 
 public class Note extends DomainEntity {
 
+	//-----------Atributos-----------
+
 	private Date		moment;
 	private String		writerComment;
 	private String		otherComments;
+
+	//----------Relaciones-----------
+
 	private HandyWorker	handyWorker;
 	private Customer	customer;
 	private Referee		refee;
 
+
+	//------------Getters y Setters-------
 
 	public HandyWorker getHandyWorker() {
 		return this.handyWorker;

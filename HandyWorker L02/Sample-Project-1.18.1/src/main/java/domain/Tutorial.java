@@ -14,12 +14,27 @@ import org.hibernate.validator.constraints.URL;
 public class Tutorial extends DomainEntity {
 
 	// Properties
-	
+
 	private Date				moment;
 	private String				title;
 	private String				summary;
 	private String				pictures;
-	
+
+	//-------------Relaciones--------------
+	private String				handyWorker;
+	private Set<Sponsorship>	sponsorships;
+	private Set<Section>		section;
+
+
+	//-------------Getters y Setters--------
+
+	public String getHandyWorker() {
+		return this.handyWorker;
+	}
+
+	public void setHandyWorker(final String handyWorker) {
+		this.handyWorker = handyWorker;
+	}
 
 	@NotNull
 	@Past
@@ -58,31 +73,24 @@ public class Tutorial extends DomainEntity {
 		this.pictures = pictures;
 	}
 
-	// Relationships
-	
-	private Set<Sponsorship>	sponsorships;
-	private Set<Section>		section;
-	
 	@NotNull
 	@Valid
 	public Set<Sponsorship> getSponsorships() {
-		return sponsorships;
+		return this.sponsorships;
 	}
 
-	public void setSponsorships(Set<Sponsorship> sponsorships) {
+	public void setSponsorships(final Set<Sponsorship> sponsorships) {
 		this.sponsorships = sponsorships;
 	}
 
 	@NotNull
 	@Valid
 	public Set<Section> getSection() {
-		return section;
+		return this.section;
 	}
 
-	public void setSection(Set<Section> section) {
+	public void setSection(final Set<Section> section) {
 		this.section = section;
 	}
 
-	
-	
 }

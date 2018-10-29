@@ -9,6 +9,8 @@ import org.hibernate.validator.constraints.URL;
 
 public class Settings extends DomainEntity {
 
+	//-----------Atributos-----------
+
 	private String	systemName;
 	private String	banner;
 	private String	welcomeMessage;
@@ -21,6 +23,8 @@ public class Settings extends DomainEntity {
 	private String	positiveWords;
 	private String	negativeWords;
 
+
+	//--------Getters y Setters-------
 
 	@NotBlank
 	public String getSystemName() {

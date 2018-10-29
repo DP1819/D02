@@ -6,10 +6,14 @@ import org.hibernate.validator.constraints.URL;
 
 public class SocialProfile extends DomainEntity {
 
+	//----------Atributos---------
+
 	private String	nick;
 	private String	networkName;
 	private String	profile;
 
+
+	//--------Getters y Setters------
 
 	@NotBlank
 	public String getNick() {

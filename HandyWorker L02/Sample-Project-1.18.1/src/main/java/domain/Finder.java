@@ -8,15 +8,21 @@ import javax.validation.constraints.Min;
 
 public class Finder extends DomainEntity {
 
+	//-------------Atributos---------
+
 	private String			keyword;
 	private Double			minPrice;
 	private Double			maxPrice;
 	private Date			start;
 	private Date			end;
+
+	//--------------Relaciones--------
+
 	private HandyWorker		handyWorker;
 	private Set<Warranty>	warranties;
 
 
+	//--------------Getters y Setters------
 	public Set<Warranty> getWarranties() {
 		return this.warranties;
 	}

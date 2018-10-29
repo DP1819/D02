@@ -8,12 +8,19 @@ import org.hibernate.validator.constraints.URL;
 
 public class Sponsorship extends DomainEntity {
 
+	//-----------Atributos----------
+
 	private String			banner;
 	private String			page;
 	private CreditCard		creditCard;
+
+	//---------Relaciones--------
+
 	private Sponsor			sponsor;
 	private Set<Tutorial>	tutorials;
 
+
+	//---------Getters y Setters------
 
 	public Set<Tutorial> getTutorials() {
 		return this.tutorials;

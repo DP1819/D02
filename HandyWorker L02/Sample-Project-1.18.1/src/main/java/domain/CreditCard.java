@@ -9,6 +9,8 @@ import org.hibernate.validator.constraints.Range;
 
 public class CreditCard extends DomainEntity {
 
+	//-----------Atributos-------------
+
 	private String	holderName;
 	private String	brandName;
 	private int		number;
@@ -16,6 +18,7 @@ public class CreditCard extends DomainEntity {
 	private int		cvvCode;
 
 
+	//---------Getters y Setters-------------
 	@NotBlank
 	public String getHolderName() {
 		return this.holderName;

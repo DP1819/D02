@@ -13,6 +13,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 public class FixupTask extends DomainEntity {
 
+	//-------------Atributos----------
 	private String				ticker;
 	private Date				moment;
 	private String				description;
@@ -20,11 +21,16 @@ public class FixupTask extends DomainEntity {
 	private Double				maximumPrice;
 	private Date				start;
 	private Date				end;
+
+	//------------Relaciones----------
+
 	private Set<Application>	applications;
 	private Set<Complaint>		complaints;
 	private WorkPlan			workplan;
 	private Customer			customer;
 
+
+	//------------Getters y Setters-------
 
 	public Set<Application> getApplications() {
 		return this.applications;

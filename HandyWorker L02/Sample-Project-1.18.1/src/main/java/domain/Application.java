@@ -11,14 +11,20 @@ import org.hibernate.validator.constraints.NotBlank;
 
 public class Application extends DomainEntity {
 
+	//----------Atributos----------
 	private Double		price;
 	private Date		moment;
 	private String		status;
 	private String		workerComments;
 	private String		customerComments;
 	private CreditCard	creditCard;
+
+	//----------Relaciones---------
+
 	private HandyWorker	handyWorker;
 
+
+	//-----------Getters y Setters---------
 
 	public HandyWorker getHandyWorker() {
 		return this.handyWorker;

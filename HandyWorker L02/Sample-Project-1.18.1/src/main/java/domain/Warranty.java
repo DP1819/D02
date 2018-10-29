@@ -7,13 +7,20 @@ import org.hibernate.validator.constraints.NotBlank;
 
 public class Warranty extends DomainEntity {
 
+	//------------Atributos---------
+
 	private String			title;
 	private String			terms;
 	private String			laws;
 	private Boolean			draft;
+
+	//-----------Relaciones-------------
+
 	private Set<FixupTask>	fixupTasks;
 	private Set<Finder>		finders;
 
+
+	//-------------Getters y Setters-------
 
 	@NotBlank
 	public String getTitle() {

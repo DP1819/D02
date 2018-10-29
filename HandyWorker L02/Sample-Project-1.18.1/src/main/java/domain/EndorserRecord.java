@@ -7,12 +7,16 @@ import org.hibernate.validator.constraints.URL;
 
 public class EndorserRecord extends DomainEntity {
 
+	//------------Atributos---------
+
 	private String	fullName;
 	private String	photo;
 	private String	email;
 	private String	phone;
 	private String	linkedProfile;
 
+
+	//------------Getters y Setters-----
 
 	@NotBlank
 	public String getFullName() {

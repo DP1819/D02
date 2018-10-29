@@ -16,8 +16,13 @@ public class Message extends DomainEntity {
 	private String		body;
 	private String		priority;
 	private String		tags;
+
+	//-------------Relaciones---------
+
 	private Set<Folder>	folders;
 
+
+	//----------Getters y Setters------
 
 	public Set<Folder> getFolders() {
 		return this.folders;

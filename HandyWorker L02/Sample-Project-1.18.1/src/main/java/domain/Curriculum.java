@@ -11,7 +11,12 @@ import org.hibernate.validator.constraints.NotBlank;
 
 public class Curriculum extends DomainEntity {
 
+	//------------Atributos----------
+
 	private String						ticker;
+
+	//-----------Relaciones------------
+
 	private HandyWorker					handyWorker;
 	private PersonalRecord				personalRecord;
 	private Set<EducationRecord>		educationRecords;
@@ -19,6 +24,8 @@ public class Curriculum extends DomainEntity {
 	private Set<EndorserRecord>			endorserRecords;
 	private Set<MiscellaneousRecord>	miscellaneousRecords;
 
+
+	//----------Getters y Setters-------
 
 	@NotBlank
 	@Pattern(regexp = "^\\d{6}-([A-Z]|\\d){6}$")
@@ -31,64 +38,63 @@ public class Curriculum extends DomainEntity {
 	}
 
 	// Relationships
-	
+
 	@NotNull
 	@Valid
 	public HandyWorker getHandyWorker() {
-		return handyWorker;
+		return this.handyWorker;
 	}
-	public void setHandyWorker(HandyWorker handyWorker) {
+	public void setHandyWorker(final HandyWorker handyWorker) {
 		this.handyWorker = handyWorker;
 	}
 
 	@NotNull
 	@Valid
 	public PersonalRecord getPersonalRecord() {
-		return personalRecord;
+		return this.personalRecord;
 	}
-	public void setPersonalRecord(PersonalRecord personalRecord) {
+	public void setPersonalRecord(final PersonalRecord personalRecord) {
 		this.personalRecord = personalRecord;
 	}
 
 	@NotNull
 	@Valid
 	public Set<EducationRecord> getEducationRecords() {
-		return educationRecords;
+		return this.educationRecords;
 	}
 
-	public void setEducationRecords(Set<EducationRecord> educationRecords) {
+	public void setEducationRecords(final Set<EducationRecord> educationRecords) {
 		this.educationRecords = educationRecords;
 	}
 
 	@NotNull
 	@Valid
 	public Set<ProfessionalRecord> getProfesionalRecords() {
-		return profesionalRecords;
+		return this.profesionalRecords;
 	}
 
-	public void setProfesionalRecords(Set<ProfessionalRecord> profesionalRecords) {
+	public void setProfesionalRecords(final Set<ProfessionalRecord> profesionalRecords) {
 		this.profesionalRecords = profesionalRecords;
 	}
 
 	@NotNull
 	@Valid
 	public Set<EndorserRecord> getEndorserRecords() {
-		return endorserRecords;
+		return this.endorserRecords;
 	}
 
-	public void setEndorserRecords(Set<EndorserRecord> endorserRecords) {
+	public void setEndorserRecords(final Set<EndorserRecord> endorserRecords) {
 		this.endorserRecords = endorserRecords;
 	}
 
 	@NotNull
 	@Valid
 	public Set<MiscellaneousRecord> getMiscellaneousRecords() {
-		return miscellaneousRecords;
+		return this.miscellaneousRecords;
 	}
 
-	public void setMiscellaneousRecords(
-			Set<MiscellaneousRecord> miscellaneousRecords) {
+	public void setMiscellaneousRecords(final Set<MiscellaneousRecord> miscellaneousRecords) {
 		this.miscellaneousRecords = miscellaneousRecords;
 	}
-	
+
 }

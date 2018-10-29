@@ -7,13 +7,19 @@ import org.hibernate.validator.constraints.NotBlank;
 
 public class Phase extends DomainEntity {
 
+	//----------Atributos-----------
+
 	private String		title;
 	private String		description;
 	private Date		start;
 	private Date		end;
+
+	//------------Relaciones-----------
+
 	private HandyWorker	handyWorker;
 
 
+	//---------Getters y Setters-----
 	public HandyWorker getHandyWorker() {
 		return this.handyWorker;
 	}

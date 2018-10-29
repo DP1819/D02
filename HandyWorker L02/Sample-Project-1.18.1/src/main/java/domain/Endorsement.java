@@ -9,11 +9,18 @@ import org.hibernate.validator.constraints.NotBlank;
 
 public class Endorsement extends DomainEntity {
 
+	//----------Atributos---------
+
 	private Date		moment;
 	private String		comments;
+
+	//-------Relaciones---------
+
 	private Endorsable	sender;
 	private Endorsable	receiver;
 
+
+	//---------Getters y Setters------
 
 	public Endorsable getSender() {
 		return this.sender;

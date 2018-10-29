@@ -8,13 +8,20 @@ import org.hibernate.validator.constraints.Range;
 
 public class HandyWorker extends Endorsable {
 
+	//------------Atributos---------
+
 	private String				make;
 	private String				score;
+
+	//-------------Relaciones---------
+
 	private Set<Curriculum>		curriculum;
 	private Set<Tutorial>		tutorials;
 	private Set<Note>			notes;
 	private Set<Application>	applications;
 
+
+	//-------------Getters y Setters----
 
 	public Set<Curriculum> getCurriculum() {
 		return this.curriculum;

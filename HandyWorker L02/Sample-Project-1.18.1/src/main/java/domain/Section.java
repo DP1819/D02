@@ -8,12 +8,19 @@ import org.hibernate.validator.constraints.URL;
 
 public class Section extends DomainEntity {
 
+	//------------Atributos------------
+
 	private String		title;
 	private String		text;
 	private String		pictures;
 	private int			numberOrder;
+
+	//------------Relaciones-----------
+
 	private Tutorial	tutorial;
 
+
+	//-----------Getters y Setters-------
 
 	public Tutorial getTutorial() {
 		return this.tutorial;

@@ -11,6 +11,8 @@ import org.hibernate.validator.constraints.URL;
 
 public class Actor extends DomainEntity {
 
+	//----------------Atributos-------------------
+
 	private String				name;
 	private String				middleName;
 	private String				surname;
@@ -20,10 +22,15 @@ public class Actor extends DomainEntity {
 	private String				address;
 	private Boolean				banned;
 	private Boolean				suspicious;
+
+	//--------------Relaciones-----------
+
 	private Set<Message>		messages;
 	private Set<Folder>			folders;
 	private Set<SocialProfile>	socialProfiles;
 
+
+	//-----------Getters y Setters------
 
 	public Set<Message> getMessages() {
 		return this.messages;

@@ -10,6 +10,8 @@ import org.hibernate.validator.constraints.URL;
 
 public class EducationRecord extends DomainEntity {
 
+	//------------Atributos-----------
+
 	private String	diplomaTitle;
 	private Date	start;
 	private Date	end;
@@ -18,6 +20,7 @@ public class EducationRecord extends DomainEntity {
 	private String	comments;
 
 
+	//-----------Getters y Setters--------
 	@NotBlank
 	public String getDiplomaTitle() {
 		return this.diplomaTitle;

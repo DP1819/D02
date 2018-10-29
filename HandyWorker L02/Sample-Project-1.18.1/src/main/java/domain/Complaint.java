@@ -10,14 +10,21 @@ import org.hibernate.validator.constraints.URL;
 
 public class Complaint extends DomainEntity {
 
+	//----------Atributos-----------
+
 	private String		ticker;
 	private String		moment;
 	private String		description;
 	private String		attachments;
+
+	//----------Relaciones---------
+
 	private Set<Report>	reports;
 	private Customer	customer;
 	private FixupTask	fixuptask;
 
+
+	//Getters y Setters
 
 	public Set<Report> getReports() {
 		return this.reports;

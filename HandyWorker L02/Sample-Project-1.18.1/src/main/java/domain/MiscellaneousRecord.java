@@ -6,10 +6,14 @@ import org.hibernate.validator.constraints.URL;
 
 public class MiscellaneousRecord extends DomainEntity {
 
+	//----------Atributos-------------
+
 	private String	title;
 	private String	attachment;
 	private String	comments;
 
+
+	//-----------Getters y Setters------
 
 	@NotBlank
 	public String getTitle() {

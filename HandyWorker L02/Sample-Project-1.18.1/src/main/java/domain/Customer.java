@@ -5,8 +5,12 @@ import org.hibernate.validator.constraints.Range;
 
 public class Customer extends Endorsable {
 
+	//---------Atributos-----------
+
 	private Double	score;
 
+
+	//----------Getters y Setters------
 
 	@Range(min = -1, max = 1)
 	public Double getScore() {

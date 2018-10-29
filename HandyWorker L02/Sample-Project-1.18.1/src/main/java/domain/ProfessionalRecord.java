@@ -10,6 +10,7 @@ import org.hibernate.validator.constraints.URL;
 
 public class ProfessionalRecord extends DomainEntity {
 
+	//-----------Atributos----------
 	private String	company;
 	private Date	start;
 	private Date	end;
@@ -17,6 +18,8 @@ public class ProfessionalRecord extends DomainEntity {
 	private String	attachment;
 	private String	comments;
 
+
+	//-----------Getters y Setters-----
 
 	@NotBlank
 	public String getCompany() {
