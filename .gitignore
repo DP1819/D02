@@ -1,0 +1,9 @@
+# Ignora cualquier carpeta target
+**/target
+# Ignora los archivos .class (binarios de Java)
+*.class
+# Ignora los metadatos
+*.metadata
+
+**/Servers
+**/Scrapbook
