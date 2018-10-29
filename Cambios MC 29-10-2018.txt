@@ -1,0 +1,4 @@
+Realizados
+
+- Se ha puesto la clase Endorsable como clase abstracta.
+- Se ha añadido la clase abstracta Ticketable, que tiene un atributo ticker. Debido a que es un requisito que los tickers de las entidades no coincidan, se ha creado Ticketable, que generaliza Curriculum, FixupTask y Complaint, de forma que facilita la comprobación y realización de la restricción del ticker único.
