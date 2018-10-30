@@ -1,6 +1,7 @@
 
 package domain;
 
+import java.util.Collection;
 import java.util.Date;
 import java.util.Set;
 
@@ -9,6 +10,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.URL;
 
 public class Tutorial extends DomainEntity {
@@ -18,7 +20,7 @@ public class Tutorial extends DomainEntity {
 	private Date				moment;
 	private String				title;
 	private String				summary;
-	private String				pictures;
+	private Collection<String>				pictures;
 
 	//-------------Relaciones--------------
 
@@ -29,6 +31,8 @@ public class Tutorial extends DomainEntity {
 
 	//-------------Getters y Setters--------
 
+	@NotNull
+	@Valid
 	public HandyWorker getHandyWorker() {
 		return this.handyWorker;
 	}
@@ -48,6 +52,7 @@ public class Tutorial extends DomainEntity {
 	}
 
 	@NotBlank
+	@NotNull
 	public String getTitle() {
 		return this.title;
 	}
@@ -57,6 +62,7 @@ public class Tutorial extends DomainEntity {
 	}
 
 	@NotBlank
+	@NotNull
 	public String getSummary() {
 		return this.summary;
 	}
@@ -66,11 +72,12 @@ public class Tutorial extends DomainEntity {
 	}
 
 	@URL
-	public String getPictures() {
+	@NotNull
+	public Collection<String> getPictures() {
 		return this.pictures;
 	}
 
-	public void setPictures(final String pictures) {
+	public void setPictures(final Collection<String> pictures) {
 		this.pictures = pictures;
 	}
 
@@ -86,6 +93,7 @@ public class Tutorial extends DomainEntity {
 
 	@NotNull
 	@Valid
+	@NotEmpty
 	public Set<Section> getSection() {
 		return this.section;
 	}
