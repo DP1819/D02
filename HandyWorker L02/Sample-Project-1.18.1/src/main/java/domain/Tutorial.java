@@ -3,7 +3,6 @@ package domain;
 
 import java.util.Collection;
 import java.util.Date;
-import java.util.Set;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -22,25 +21,7 @@ public class Tutorial extends DomainEntity {
 	private String				summary;
 	private Collection<String>				pictures;
 
-	//-------------Relaciones--------------
-
-	private HandyWorker			handyWorker;
-	private Set<Sponsorship>	sponsorships;
-	private Set<Section>		section;
-
-
-	//-------------Getters y Setters--------
-
-	@NotNull
-	@Valid
-	public HandyWorker getHandyWorker() {
-		return this.handyWorker;
-	}
-
-	public void setHandyWorker(final HandyWorker handyWorker) {
-		this.handyWorker = handyWorker;
-	}
-
+	
 	@NotNull
 	@Past
 	public Date getMoment() {
@@ -80,25 +61,42 @@ public class Tutorial extends DomainEntity {
 	public void setPictures(final Collection<String> pictures) {
 		this.pictures = pictures;
 	}
+	
+	//-------------Relaciones--------------
+
+	private HandyWorker			handyWorker;
+	private Collection<Sponsorship>	sponsorships;
+	private Collection<Section>		section;
+	
 
 	@NotNull
 	@Valid
-	public Set<Sponsorship> getSponsorships() {
+	public HandyWorker getHandyWorker() {
+		return this.handyWorker;
+	}
+
+	public void setHandyWorker(final HandyWorker handyWorker) {
+		this.handyWorker = handyWorker;
+	}
+
+	@NotNull
+	@Valid
+	public Collection<Sponsorship> getSponsorships() {
 		return this.sponsorships;
 	}
 
-	public void setSponsorships(final Set<Sponsorship> sponsorships) {
+	public void setSponsorships(final Collection<Sponsorship> sponsorships) {
 		this.sponsorships = sponsorships;
 	}
 
 	@NotNull
 	@Valid
 	@NotEmpty
-	public Set<Section> getSection() {
+	public Collection<Section> getSection() {
 		return this.section;
 	}
 
-	public void setSection(final Set<Section> section) {
+	public void setSection(final Collection<Section> section) {
 		this.section = section;
 	}
 
