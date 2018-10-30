@@ -1,6 +1,8 @@
 
 package domain;
 
+import javax.validation.constraints.Pattern;
+
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
@@ -39,6 +41,7 @@ public class EndorserRecord extends DomainEntity {
 
 	@NotBlank
 	@Email
+	@Pattern(regexp="^(\w+@(\w+(\.\w*)*)?)|(\w+( \w+)* <\w+@(\w+(\.\w*)*)?>)$")
 	public String getEmail() {
 		return this.email;
 	}
@@ -48,6 +51,7 @@ public class EndorserRecord extends DomainEntity {
 	}
 
 	@NotBlank
+	@Pattern(regexp = "^((\+\d{1,3})(\(\d{1,3}\))?)?\d{4,}$")
 	public String getPhone() {
 		return this.phone;
 	}

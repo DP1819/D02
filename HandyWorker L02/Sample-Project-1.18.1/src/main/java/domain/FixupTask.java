@@ -1,6 +1,7 @@
 
 package domain;
 
+import java.util.Collection;
 import java.util.Date;
 import java.util.Set;
 
@@ -11,10 +12,10 @@ import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-public class FixupTask extends DomainEntity {
+public class FixupTask extends Ticketable{
 
 	//-------------Atributos----------
-	private String				ticker;
+	
 	private Date				moment;
 	private String				description;
 	private String				address;
@@ -24,11 +25,12 @@ public class FixupTask extends DomainEntity {
 
 	//------------Relaciones----------
 
-	private Set<Application>	applications;
-	private Set<Complaint>		complaints;
-	private WorkPlan			workplan;
-	private Customer			customer;
-	private Set<Category>		categories;
+
+	private Collection<Complaint>		complaints;
+	private Customer					customer;
+	private Category					category;
+	private Warranty					warranty;
+	
 
 
 	//------------Getters y Setters-------
@@ -90,8 +92,7 @@ public class FixupTask extends DomainEntity {
 	}
 
 
-	private Category	name;
-	private Warranty	warranty;
+	
 
 
 	@NotBlank

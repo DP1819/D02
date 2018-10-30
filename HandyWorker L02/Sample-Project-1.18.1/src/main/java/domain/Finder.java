@@ -1,10 +1,13 @@
 
 package domain;
 
+import java.util.Collection;
 import java.util.Date;
-import java.util.Set;
 
+
+import javax.validation.Valid;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 public class Finder extends DomainEntity {
 
@@ -18,36 +21,34 @@ public class Finder extends DomainEntity {
 
 	//--------------Relaciones--------
 
-	private HandyWorker		handyWorker;
-	private Set<Warranty>	warranties;
-	private Set<Category>	categories;
+	
+	private Collection<Warranty>	warranties;
+	private Collection<Category>	categories;
 
 
 	//--------------Getters y Setters------
 
-	public Set<Category> getCategories() {
+	@Valid
+	@NotNull
+	public Collection<Category> getCategories() {
 		return this.categories;
 	}
 
-	public void setCategories(final Set<Category> categories) {
+	public void setCategories(final Collection<Category> categories) {
 		this.categories = categories;
 	}
 
-	public Set<Warranty> getWarranties() {
+	@Valid
+	@NotNull
+	public Collection<Warranty> getWarranties() {
 		return this.warranties;
 	}
 
-	public void setWarranties(final Set<Warranty> warranties) {
+	public void setWarranties(final Collection<Warranty> warranties) {
 		this.warranties = warranties;
 	}
 
-	public HandyWorker getHandyWorker() {
-		return this.handyWorker;
-	}
 
-	public void setHandyWorker(final HandyWorker handyWorker) {
-		this.handyWorker = handyWorker;
-	}
 
 	public String getKeyword() {
 		return this.keyword;
