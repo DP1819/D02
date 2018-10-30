@@ -2,6 +2,7 @@
 package domain;
 
 import java.util.Collection;
+import java.util.Date;
 
 
 import javax.validation.Valid;
@@ -9,13 +10,14 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.URL;
 
 
 public class Complaint extends Ticketable {
 
 	//----------Atributos-----------
 
-	private String					moment;
+	private Date					moment;
 	private String					description;
 	private Collection<String>		attachments;
 
@@ -60,15 +62,17 @@ public class Complaint extends Ticketable {
 
 
 	@Past
-	public String getMoment() {
+	@NotNull
+	public Date getMoment() {
 		return this.moment;
 	}
 
-	public void setMoment(final String moment) {
+	public void setMoment(final Date moment) {
 		this.moment = moment;
 	}
 
 	@NotBlank
+	@NotNull
 	public String getDescription() {
 		return this.description;
 	}
@@ -78,6 +82,7 @@ public class Complaint extends Ticketable {
 	}
 
 	@NotNull
+	@URL
 	public Collection<String> getAttachments() {
 		return this.attachments;
 	}
