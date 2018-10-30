@@ -3,69 +3,33 @@ package domain;
 
 import java.util.Collection;
 import java.util.Date;
-import java.util.Set;
 
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Past;
-import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
 
-public class FixupTask extends Ticketable{
+public class FixupTask extends Ticketable {
 
 	//-------------Atributos----------
-	
-	private Date				moment;
-	private String				description;
-	private String				address;
-	private Double				maximumPrice;
-	private Date				start;
-	private Date				end;
+
+	private Date					moment;
+	private String					description;
+	private String					address;
+	private Double					maximumPrice;
+	private Date					start;
+	private Date					end;
 
 	//------------Relaciones----------
 
-
-	private Collection<Complaint>		complaints;
-	private Customer					customer;
-	private Category					category;
-	private Warranty					warranty;
-	
+	private Collection<Complaint>	complaints;
+	private Customer				customer;
+	private Category				category;
+	private Warranty				warranty;
 
 
 	//------------Getters y Setters-------
-
-	public Set<Category> getCategories() {
-		return this.categories;
-	}
-
-	public void setCategories(final Set<Category> categories) {
-		this.categories = categories;
-	}
-
-	public Set<Application> getApplications() {
-		return this.applications;
-	}
-
-	public void setApplications(final Set<Application> applications) {
-		this.applications = applications;
-	}
-
-	public Set<Complaint> getComplaints() {
-		return this.complaints;
-	}
-
-	public void setComplaints(final Set<Complaint> complaints) {
-		this.complaints = complaints;
-	}
-
-	public WorkPlan getWorkplan() {
-		return this.workplan;
-	}
-
-	public void setWorkplan(final WorkPlan workplan) {
-		this.workplan = workplan;
-	}
 
 	public Customer getCustomer() {
 		return this.customer;
@@ -73,14 +37,6 @@ public class FixupTask extends Ticketable{
 
 	public void setCustomer(final Customer customer) {
 		this.customer = customer;
-	}
-
-	public Category getName() {
-		return this.name;
-	}
-
-	public void setName(final Category name) {
-		this.name = name;
 	}
 
 	public Warranty getWarranty() {
@@ -91,19 +47,20 @@ public class FixupTask extends Ticketable{
 		this.warranty = warranty;
 	}
 
-
-	
-
-
-	@NotBlank
-	//@Unique
-	@Pattern(regexp = "^[0-9]{6}-([A-Z]|[0-9]) {6}$)")
-	public String getTicker() {
-		return this.ticker;
+	public Collection<Complaint> getComplaints() {
+		return this.complaints;
 	}
 
-	public void setTicker(final String ticker) {
-		this.ticker = ticker;
+	public void setComplaints(final Collection<Complaint> complaints) {
+		this.complaints = complaints;
+	}
+
+	public Category getCategory() {
+		return this.category;
+	}
+
+	public void setCategory(final Category category) {
+		this.category = category;
 	}
 
 	@Past

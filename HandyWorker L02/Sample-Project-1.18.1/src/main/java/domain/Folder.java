@@ -1,7 +1,7 @@
 
 package domain;
 
-import java.util.Set;
+import java.util.Collection;
 
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -9,22 +9,17 @@ public class Folder extends DomainEntity {
 
 	//------------Atributos---------
 
-	private String			name;
-	private Boolean			system;
+	private String				name;
+	private Boolean				system;
 
 	//------------Relaciones----------
 
-	private Set<Message>	messages;
+	private Collection<Message>	messages;
+	private Collection<Folder>	childFolder;
+	private Folder				parentFolder;
 
 
 	//----------Getters y Setters-----
-	public Set<Message> getMessages() {
-		return this.messages;
-	}
-
-	public void setMessages(final Set<Message> messages) {
-		this.messages = messages;
-	}
 
 	@NotBlank
 	public String getName() {
@@ -41,6 +36,30 @@ public class Folder extends DomainEntity {
 
 	public void setSystem(final Boolean system) {
 		this.system = system;
+	}
+
+	public Collection<Message> getMessages() {
+		return this.messages;
+	}
+
+	public void setMessages(final Collection<Message> messages) {
+		this.messages = messages;
+	}
+
+	public Collection<Folder> getChildFolder() {
+		return this.childFolder;
+	}
+
+	public void setChildFolder(final Collection<Folder> childFolder) {
+		this.childFolder = childFolder;
+	}
+
+	public Folder getParentFolder() {
+		return this.parentFolder;
+	}
+
+	public void setParentFolder(final Folder parentFolder) {
+		this.parentFolder = parentFolder;
 	}
 
 }

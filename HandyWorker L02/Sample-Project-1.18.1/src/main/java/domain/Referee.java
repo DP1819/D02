@@ -1,31 +1,31 @@
 
 package domain;
 
-import java.util.Set;
+import java.util.Collection;
 
 public class Referee extends Actor {
 
 	//----------Relaciones-----------
 
-	private Set<Note>	notes;
-	private Set<Report>	reports;
+	private Collection<Note>	notes;
+	private Collection<Report>	reports;
 
 
 	//----------Getters y Setters-------
 
-	public Set<Note> getNotes() {
+	public Collection<Note> getNotes() {
 		return this.notes;
 	}
 
-	public void setNotes(final Set<Note> notes) {
+	public void setNotes(final Collection<Note> notes) {
 		this.notes = notes;
 	}
 
-	public Set<Report> getReports() {
+	public Collection<Report> getReports() {
 		return this.reports;
 	}
 
-	public void setReports(final Set<Report> reports) {
+	public void setReports(final Collection<Report> reports) {
 		this.reports = reports;
 	}
 

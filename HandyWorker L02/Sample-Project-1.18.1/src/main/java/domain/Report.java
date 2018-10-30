@@ -1,6 +1,7 @@
 
 package domain;
 
+import java.util.Collection;
 import java.util.Date;
 
 import javax.validation.constraints.Past;
@@ -12,15 +13,16 @@ public class Report extends DomainEntity {
 
 	//-----------Atributos-----------
 
-	private Date	moment;
-	private String	description;
-	private String	attachments;
-	private Boolean	draft;
+	private Date				moment;
+	private String				description;
+	private Collection<String>	attachments;
+	private Boolean				draft;
 
 	//-----------Relaciones----------
 
-	private Referee	referee;
-	private Note	note;
+	private Referee				referee;
+	private Collection<Note>	notes;
+	private Complaint			complaint;
 
 
 	//----------Getters y Setters-------
@@ -38,12 +40,37 @@ public class Report extends DomainEntity {
 		this.referee = referee;
 	}
 
-	public Note getNote() {
-		return this.note;
+	public Collection<Note> getNote() {
+		return this.notes;
 	}
 
-	public void setNote(final Note note) {
-		this.note = note;
+	public void setNote(final Collection<Note> notes) {
+		this.notes = notes;
+	}
+
+	public Collection<Note> getNotes() {
+		return this.notes;
+	}
+
+	public void setNotes(final Collection<Note> notes) {
+		this.notes = notes;
+	}
+
+	public Complaint getComplaint() {
+		return this.complaint;
+	}
+
+	public void setComplaint(final Complaint complaint) {
+		this.complaint = complaint;
+	}
+
+	@URL
+	public Collection<String> getAttachments() {
+		return this.attachments;
+	}
+
+	public void setAttachments(final Collection<String> attachments) {
+		this.attachments = attachments;
 	}
 
 	public void setMoment(final Date moment) {
@@ -57,15 +84,6 @@ public class Report extends DomainEntity {
 
 	public void setDescription(final String description) {
 		this.description = description;
-	}
-
-	@URL
-	public String getAttachments() {
-		return this.attachments;
-	}
-
-	public void setAttachments(final String attachments) {
-		this.attachments = attachments;
 	}
 
 	public Boolean getDraft() {

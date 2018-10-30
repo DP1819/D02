@@ -1,6 +1,7 @@
 
 package domain;
 
+import java.util.Collection;
 import java.util.Date;
 
 import javax.validation.constraints.Past;
@@ -75,11 +76,11 @@ public class Note extends DomainEntity {
 		this.writerComment = writerComment;
 	}
 
-	public String getOtherComments() {
+	public Collection<String> getOtherComments() {
 		return this.otherComments;
 	}
 
-	public void setOtherComments(final String otherComments) {
+	public void setOtherComments(final Collection<String> otherComments) {
 		this.otherComments = otherComments;
 	}
 

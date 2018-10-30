@@ -1,6 +1,8 @@
 
 package domain;
 
+import javax.validation.constraints.Pattern;
+
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
@@ -48,6 +50,7 @@ public class PersonalRecord extends DomainEntity {
 	}
 
 	@NotBlank
+	@Pattern(regexp = "^((\\+\\d{1,3})(\\(\\d{1,3}\\))?)?\\d{4,}$")
 	public String getPhone() {
 		return this.phone;
 	}

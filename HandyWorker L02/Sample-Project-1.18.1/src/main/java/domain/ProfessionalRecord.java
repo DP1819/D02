@@ -11,6 +11,7 @@ import org.hibernate.validator.constraints.URL;
 public class ProfessionalRecord extends DomainEntity {
 
 	//-----------Atributos----------
+
 	private String	company;
 	private Date	start;
 	private Date	end;

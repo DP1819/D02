@@ -1,6 +1,7 @@
 
 package domain;
 
+import java.util.Collection;
 import java.util.Set;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -10,20 +11,22 @@ public class HandyWorker extends Endorsable {
 
 	//------------Atributos---------
 
-	private String				make;
-	private String				score;
+	private String					make;
+	private Double					score;
 
 	//-------------Relaciones---------
 
-	private Curriculum			curriculum;
-	private Tutorial			tutorials;
-	private Set<Note>			notes;
-	private Set<Application>	applications;
+	private Curriculum				curriculum;
+	private Finder					finder;
+	private Collection<Tutorial>	tutorials;
+	private Collection<Note>		notes;
+	private Collection<Application>	applications;
+	private Collection<WorkPlan>	workPlans;
 
 
 	//-------------Getters y Setters----
 
-	public Set<Note> getNotes() {
+	public Collection<Note> getNotes() {
 		return this.notes;
 	}
 
@@ -35,24 +38,8 @@ public class HandyWorker extends Endorsable {
 		this.curriculum = curriculum;
 	}
 
-	public Tutorial getTutorials() {
-		return this.tutorials;
-	}
-
-	public void setTutorials(final Tutorial tutorials) {
-		this.tutorials = tutorials;
-	}
-
 	public void setNotes(final Set<Note> notes) {
 		this.notes = notes;
-	}
-
-	public Set<Application> getApplications() {
-		return this.applications;
-	}
-
-	public void setApplications(final Set<Application> applications) {
-		this.applications = applications;
 	}
 
 	@NotBlank
@@ -65,12 +52,48 @@ public class HandyWorker extends Endorsable {
 	}
 
 	@Range(min = -1, max = 1)
-	public String getScore() {
+	public Double getScore() {
 		return this.score;
 	}
 
-	public void setScore(final String score) {
+	public void setScore(final Double score) {
 		this.score = score;
+	}
+
+	public Finder getFinder() {
+		return this.finder;
+	}
+
+	public void setFinder(final Finder finder) {
+		this.finder = finder;
+	}
+
+	public Collection<Tutorial> getTutorials() {
+		return this.tutorials;
+	}
+
+	public void setTutorials(final Collection<Tutorial> tutorials) {
+		this.tutorials = tutorials;
+	}
+
+	public Collection<Application> getApplications() {
+		return this.applications;
+	}
+
+	public void setApplications(final Collection<Application> applications) {
+		this.applications = applications;
+	}
+
+	public Collection<WorkPlan> getWorkPlans() {
+		return this.workPlans;
+	}
+
+	public void setWorkPlans(final Collection<WorkPlan> workPlans) {
+		this.workPlans = workPlans;
+	}
+
+	public void setNotes(final Collection<Note> notes) {
+		this.notes = notes;
 	}
 
 }

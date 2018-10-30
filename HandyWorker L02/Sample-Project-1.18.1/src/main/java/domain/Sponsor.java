@@ -10,18 +10,18 @@ public class Sponsor extends Actor {
 
 	//----------Relaciones----------
 
-	private Collection<Sponsor>	sponsorships;
+	private Collection<Sponsorship>	sponsorships;
 
 
 	//----------Getters y Setters------
 
 	@Valid
 	@NotNull
-	public Collection<Sponsor> getSponsorships() {
+	public Collection<Sponsorship> getSponsorships() {
 		return this.sponsorships;
 	}
 
-	public void setSponsorships(final Collection<Sponsor> sponsorships) {
+	public void setSponsorships(final Collection<Sponsorship> sponsorships) {
 		this.sponsorships = sponsorships;
 	}
 

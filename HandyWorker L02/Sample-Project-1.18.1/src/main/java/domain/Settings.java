@@ -16,7 +16,7 @@ public class Settings extends DomainEntity {
 	private String	welcomeMessage;
 	private String	spamWords;
 	private int		vat;
-	private String	countryCOde;
+	private String	countryCode;
 	private String	creditCardMakes;
 	private int		finderCacheHours;
 	private int		maxCacheResults;
@@ -73,12 +73,12 @@ public class Settings extends DomainEntity {
 	}
 
 	@NotBlank
-	public String getCountryCOde() {
-		return this.countryCOde;
+	public String getCountryCode() {
+		return this.countryCode;
 	}
 
-	public void setCountryCOde(final String countryCOde) {
-		this.countryCOde = countryCOde;
+	public void setCountryCode(final String countryCode) {
+		this.countryCode = countryCode;
 	}
 
 	@NotBlank

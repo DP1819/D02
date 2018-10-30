@@ -19,14 +19,12 @@ public class Tutorial extends DomainEntity {
 	private Date				moment;
 	private String				title;
 	private String				summary;
-	private Collection<String>				pictures;
-	
-	
+	private Collection<String>	pictures;
+
 	//-------------Relaciones--------------
 
 	private HandyWorker			handyWorker;
-	private Collection<Sponsorship>	sponsorships;
-	private Collection<Section>		section;
+	private Collection<Section>	sections;
 
 
 	//-------------Getters y Setters--------
@@ -62,7 +60,6 @@ public class Tutorial extends DomainEntity {
 	}
 
 	@URL
-	@NotNull
 	public Collection<String> getPictures() {
 		return this.pictures;
 	}
@@ -70,7 +67,7 @@ public class Tutorial extends DomainEntity {
 	public void setPictures(final Collection<String> pictures) {
 		this.pictures = pictures;
 	}
-	
+
 	@NotNull
 	@Valid
 	public HandyWorker getHandyWorker() {
@@ -81,27 +78,15 @@ public class Tutorial extends DomainEntity {
 		this.handyWorker = handyWorker;
 	}
 
-	
-
-	@NotNull
-	@Valid
-	public Collection<Sponsorship> getSponsorships() {
-		return this.sponsorships;
-	}
-
-	public void setSponsorships(final Collection<Sponsorship> sponsorships) {
-		this.sponsorships = sponsorships;
-	}
-
 	@NotNull
 	@Valid
 	@NotEmpty
 	public Collection<Section> getSection() {
-		return this.section;
+		return this.sections;
 	}
 
-	public void setSection(final Collection<Section> section) {
-		this.section = section;
+	public void setSection(final Collection<Section> sections) {
+		this.sections = sections;
 	}
 
 }

@@ -16,17 +16,10 @@ public class Phase extends DomainEntity {
 
 	//------------Relaciones-----------
 
-	private HandyWorker	handyWorker;
+	private WorkPlan	workPlan;
 
 
 	//---------Getters y Setters-----
-	public HandyWorker getHandyWorker() {
-		return this.handyWorker;
-	}
-
-	public void setHandyWorker(final HandyWorker handyWorker) {
-		this.handyWorker = handyWorker;
-	}
 
 	@NotBlank
 	public String getTitle() {
@@ -60,6 +53,14 @@ public class Phase extends DomainEntity {
 
 	public void setEnd(final Date end) {
 		this.end = end;
+	}
+
+	public WorkPlan getWorkPlan() {
+		return this.workPlan;
+	}
+
+	public void setWorkPlan(final WorkPlan workPlan) {
+		this.workPlan = workPlan;
 	}
 
 }

@@ -1,6 +1,8 @@
 
 package domain;
 
+import java.util.Collection;
+
 import javax.validation.constraints.Min;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -10,14 +12,14 @@ public class Section extends DomainEntity {
 
 	//------------Atributos------------
 
-	private String		title;
-	private String		text;
-	private String		pictures;
-	private int			numberOrder;
+	private String				title;
+	private String				text;
+	private Collection<String>	pictures;
+	private int					numberOrder;
 
 	//------------Relaciones-----------
 
-	private Tutorial	tutorial;
+	private Tutorial			tutorial;
 
 
 	//-----------Getters y Setters-------
@@ -49,15 +51,15 @@ public class Section extends DomainEntity {
 	}
 
 	@URL
-	public String getPictures() {
+	public Collection<String> getPictures() {
 		return this.pictures;
 	}
 
-	public void setPictures(final String pictures) {
+	public void setPictures(final Collection<String> pictures) {
 		this.pictures = pictures;
 	}
 
-	@Min(0)
+	@Min(value = 0)
 	public int getNumberOrder() {
 		return this.numberOrder;
 	}
