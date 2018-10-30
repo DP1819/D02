@@ -1,0 +1,5 @@
+Realizados
+
+- Se ha cambiado la multiplicidad de Referee a Complaint de 1 a 0..*. Un Referee puede encargarse de más de una Complaint o de ninguna.
+- Se ha cambiado el pattern de los atributos phone de Actor y PersonalRecord. Ahora el pattern es más restrictivo, pero permite usar todos los teléfonos indicados en los requisitos.
+- Se ha añadido una anotación para que sólo se pueda aceptar una Application por FixupTask.
