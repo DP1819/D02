@@ -20,8 +20,6 @@ public class Warranty extends DomainEntity {
 	//-----------Relaciones-------------
 
 	private Collection<FixupTask>	fixupTasks;
-	private Collection<Finder>		finders;
-
 
 	//-------------Getters y Setters-------
 
@@ -72,16 +70,6 @@ public class Warranty extends DomainEntity {
 
 	public void setFixupTasks(final Collection<FixupTask> fixupTasks) {
 		this.fixupTasks = fixupTasks;
-	}
-
-	@NotNull
-	@Valid
-	public Collection<Finder> getFinders() {
-		return this.finders;
-	}
-
-	public void setFinders(final Collection<Finder> finders) {
-		this.finders = finders;
 	}
 
 }
