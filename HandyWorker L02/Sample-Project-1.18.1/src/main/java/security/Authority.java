@@ -45,6 +45,10 @@ public class Authority implements GrantedAuthority {
 	private String				authority;
 
 
+	//-------------Relaciones-------------------
+
+	//--------------Getters y Setters--------------
+
 	@NotBlank
 	@Pattern(regexp = "^" + Authority.ADMIN + "|" + Authority.CUSTOMER + "$")
 	@Override

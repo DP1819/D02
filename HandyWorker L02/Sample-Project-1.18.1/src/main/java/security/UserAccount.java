@@ -46,12 +46,16 @@ public class UserAccount extends DomainEntity implements UserDetails {
 
 	// Attributes -------------------------------------------------------------
 
+	//-----------------------Relaciones----------------------------------
+
 	// UserDetails interface --------------------------------------------------
 
 	private String					username;
 	private String					password;
 	private Collection<Authority>	authorities;
 
+
+	//------------------Getters y Setters----------------------
 
 	@Size(min = 5, max = 32)
 	@Column(unique = true)
