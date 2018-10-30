@@ -18,7 +18,7 @@ public class Ticketable  extends DomainEntity{
 	//--------getters y setters------------
 	@NotBlank
 	@Column(unique=true)
-	@Pattern(regexp="^\d{6}-([A-Z]|\d) {6}$")
+	@Pattern(regexp="^\\d{6}-([A-Z]|\\d){6}$")x//comprobar patrón
 	public String getTicker() {
 		return ticker;
 	}

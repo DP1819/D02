@@ -1,41 +1,31 @@
 
 package domain;
 
-import java.util.Set;
+import java.util.Collection;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
 
-import org.hibernate.validator.constraints.NotBlank;
 
-public class Curriculum extends DomainEntity {
+public class Curriculum extends Ticketable {
 
 	//------------Atributos----------
 
-	private String						ticker;
+	
 
 	//-----------Relaciones------------
 
-	private HandyWorker					handyWorker;
-	private PersonalRecord				personalRecord;
-	private Set<EducationRecord>		educationRecords;
-	private Set<ProfessionalRecord>		profesionalRecords;
-	private Set<EndorserRecord>			endorserRecords;
-	private Set<MiscellaneousRecord>	miscellaneousRecords;
+	private HandyWorker							handyWorker;
+	private PersonalRecord						personalRecord;
+	private Collection<EducationRecord>			educationRecords;
+	private Collection<ProfessionalRecord>		profesionalRecords;
+	private Collection<EndorserRecord>			endorserRecords;
+	private Collection<MiscellaneousRecord>		miscellaneousRecords;
 
 
 	//----------Getters y Setters-------
 
-	@NotBlank
-	@Pattern(regexp = "^\\d{6}-([A-Z]|\\d){6}$")
-	public String getTicker() {
-		return this.ticker;
-	}
 
-	public void setTicker(final String ticker) {
-		this.ticker = ticker;
-	}
 
 	// Relationships
 
@@ -59,41 +49,41 @@ public class Curriculum extends DomainEntity {
 
 	@NotNull
 	@Valid
-	public Set<EducationRecord> getEducationRecords() {
+	public Collection<EducationRecord> getEducationRecords() {
 		return this.educationRecords;
 	}
 
-	public void setEducationRecords(final Set<EducationRecord> educationRecords) {
+	public void setEducationRecords(final Collection<EducationRecord> educationRecords) {
 		this.educationRecords = educationRecords;
 	}
 
 	@NotNull
 	@Valid
-	public Set<ProfessionalRecord> getProfesionalRecords() {
+	public Collection<ProfessionalRecord> getProfesionalRecords() {
 		return this.profesionalRecords;
 	}
 
-	public void setProfesionalRecords(final Set<ProfessionalRecord> profesionalRecords) {
+	public void setProfesionalRecords(final Collection<ProfessionalRecord> profesionalRecords) {
 		this.profesionalRecords = profesionalRecords;
 	}
 
 	@NotNull
 	@Valid
-	public Set<EndorserRecord> getEndorserRecords() {
+	public Collection<EndorserRecord> getEndorserRecords() {
 		return this.endorserRecords;
 	}
 
-	public void setEndorserRecords(final Set<EndorserRecord> endorserRecords) {
+	public void setEndorserRecords(final Collection<EndorserRecord> endorserRecords) {
 		this.endorserRecords = endorserRecords;
 	}
 
 	@NotNull
 	@Valid
-	public Set<MiscellaneousRecord> getMiscellaneousRecords() {
+	public Collection<MiscellaneousRecord> getMiscellaneousRecords() {
 		return this.miscellaneousRecords;
 	}
 
-	public void setMiscellaneousRecords(final Set<MiscellaneousRecord> miscellaneousRecords) {
+	public void setMiscellaneousRecords(final Collection<MiscellaneousRecord> miscellaneousRecords) {
 		this.miscellaneousRecords = miscellaneousRecords;
 	}
 
