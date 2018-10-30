@@ -1,0 +1,4 @@
+Realizados
+
+- Se han cambiado las relaciones entre Report, Complaint y Referee. Antes, la clase asociación obligaba a hacer un Report cuando un Referee se autoasignaba una Complaint. Ahora, un Referee puede autoasignarse una Complaint y, después, escribir el Report. El Report se relaciona con el Referee a través de Complaint.
+- Se ha puesto la CreditCard de Application como opcional, aclarando que debe de ser aportada al aceptar la Application. De la anterior forma, se tenía que dar la CreditCard al crea la Application, lo cual choca con las reglas de negocio.
