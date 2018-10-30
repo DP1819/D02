@@ -1,13 +1,11 @@
 
 package domain;
 
-import java.util.Collection;
 import java.util.Date;
 
 
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
 
 public class Finder extends DomainEntity {
 
@@ -22,30 +20,28 @@ public class Finder extends DomainEntity {
 	//--------------Relaciones--------
 
 	
-	private Collection<Warranty>	warranties;
-	private Collection<Category>	categories;
+	private Warranty    warranty;
+	private Category	category;
 
 
 	//--------------Getters y Setters------
 
 	@Valid
-	@NotNull
-	public Collection<Category> getCategories() {
-		return this.categories;
+	public Category getCategory() {
+		return this.category;
 	}
 
-	public void setCategories(final Collection<Category> categories) {
-		this.categories = categories;
+	public void setCategory(final Category category) {
+		this.category = category;
 	}
 
 	@Valid
-	@NotNull
-	public Collection<Warranty> getWarranties() {
-		return this.warranties;
+	public Warranty getWarranty() {
+		return this.warranty;
 	}
 
-	public void setWarranties(final Collection<Warranty> warranties) {
-		this.warranties = warranties;
+	public void setWarranty(final Warranty warranty) {
+		this.warranty = warranty;
 	}
 
 
