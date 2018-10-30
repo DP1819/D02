@@ -3,12 +3,12 @@ package domain;
 
 import java.util.Collection;
 import java.util.Date;
-import java.util.Set;
 
+import javax.validation.Valid;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
-import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -19,7 +19,7 @@ public class FixupTask extends Ticketable{
 	private Date				moment;
 	private String				description;
 	private String				address;
-	private Double				maximumPrice;
+	private double				maximumPrice;
 	private Date				start;
 	private Date				end;
 
@@ -35,38 +35,28 @@ public class FixupTask extends Ticketable{
 
 	//------------Getters y Setters-------
 
-	public Set<Category> getCategories() {
-		return this.categories;
+	@NotNull
+	@Valid
+	public Category getCategory() {
+		return this.category;
 	}
 
-	public void setCategories(final Set<Category> categories) {
-		this.categories = categories;
+	public void setCategories(final Category category) {
+		this.category = category;
 	}
 
-	public Set<Application> getApplications() {
-		return this.applications;
-	}
-
-	public void setApplications(final Set<Application> applications) {
-		this.applications = applications;
-	}
-
-	public Set<Complaint> getComplaints() {
+	@NotNull
+	@Valid
+	public Collection<Complaint> getComplaints() {
 		return this.complaints;
 	}
 
-	public void setComplaints(final Set<Complaint> complaints) {
+	public void setComplaints(final Collection<Complaint> complaints) {
 		this.complaints = complaints;
 	}
 
-	public WorkPlan getWorkplan() {
-		return this.workplan;
-	}
-
-	public void setWorkplan(final WorkPlan workplan) {
-		this.workplan = workplan;
-	}
-
+	@NotNull
+	@Valid
 	public Customer getCustomer() {
 		return this.customer;
 	}
@@ -75,14 +65,8 @@ public class FixupTask extends Ticketable{
 		this.customer = customer;
 	}
 
-	public Category getName() {
-		return this.name;
-	}
-
-	public void setName(final Category name) {
-		this.name = name;
-	}
-
+	@NotNull
+	@Valid
 	public Warranty getWarranty() {
 		return this.warranty;
 	}
@@ -91,22 +75,8 @@ public class FixupTask extends Ticketable{
 		this.warranty = warranty;
 	}
 
-
-	
-
-
-	@NotBlank
-	//@Unique
-	@Pattern(regexp = "^[0-9]{6}-([A-Z]|[0-9]) {6}$)")
-	public String getTicker() {
-		return this.ticker;
-	}
-
-	public void setTicker(final String ticker) {
-		this.ticker = ticker;
-	}
-
 	@Past
+	@NotNull
 	public Date getMoment() {
 		return this.moment;
 	}
@@ -116,6 +86,7 @@ public class FixupTask extends Ticketable{
 	}
 
 	@NotBlank
+	@NotNull
 	public String getDescription() {
 		return this.description;
 	}
@@ -125,6 +96,7 @@ public class FixupTask extends Ticketable{
 	}
 
 	@NotBlank
+	@NotNull
 	public String getAddress() {
 		return this.address;
 	}
@@ -135,14 +107,15 @@ public class FixupTask extends Ticketable{
 
 	@Digits(fraction = 0, integer = 2)
 	@Min(value = 0)
-	public Double getMaximumPrice() {
+	public double getMaximumPrice() {
 		return this.maximumPrice;
 	}
 
-	public void setMaximumPrice(final Double maximumPrice) {
+	public void setMaximumPrice(final double maximumPrice) {
 		this.maximumPrice = maximumPrice;
 	}
 
+	@NotNull
 	public Date getStart() {
 		return this.start;
 	}
@@ -151,6 +124,7 @@ public class FixupTask extends Ticketable{
 		this.start = start;
 	}
 
+	@NotNull
 	public Date getEnd() {
 		return this.end;
 	}
