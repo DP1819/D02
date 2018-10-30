@@ -23,7 +23,7 @@ public class Warranty extends DomainEntity {
 	private Collection<Finder>		finders;
 
 
-	//-------------Getters y Collectionters-------
+	//-------------Getters y Setters-------
 
 	@NotBlank
 	@NotNull

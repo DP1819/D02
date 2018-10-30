@@ -1,8 +1,7 @@
 
 package domain;
 
-import java.util.Set;
-
+import java.util.Collection;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
@@ -12,18 +11,18 @@ public class WorkPlan {
 
 	//----------Relaciones--------
 
-	private Set<Phase>	phase;
+	private Collection<Phase>	phase;
 
 	//----------Getters y Setters-----
 
 	@NotNull
 	@NotEmpty
 	@Valid
-	public Set<Phase> getPhase() {
+	public Collection<Phase> getPhase() {
 		return this.phase;
 	}
 
-	public void setPhase(final Set<Phase> phase) {
+	public void setPhase(final Collection<Phase> phase) {
 		this.phase = phase;
 	}
 

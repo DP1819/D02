@@ -1,7 +1,10 @@
 
 package domain;
 
-import java.util.Set;
+import java.util.Collection;
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
@@ -17,19 +20,23 @@ public class Sponsorship extends DomainEntity {
 	//---------Relaciones--------
 
 	private Sponsor			sponsor;
-	private Set<Tutorial>	tutorials;
+	private Collection<Tutorial>	tutorials;
 
 
 	//---------Getters y Setters------
 
-	public Set<Tutorial> getTutorials() {
+	@NotNull
+	@Valid
+	public Collection<Tutorial> getTutorials() {
 		return this.tutorials;
 	}
 
-	public void setTutorials(final Set<Tutorial> tutorials) {
+	public void setTutorials(final Collection<Tutorial> tutorials) {
 		this.tutorials = tutorials;
 	}
 
+	@NotNull
+	@Valid
 	public Sponsor getSponsor() {
 		return this.sponsor;
 	}
@@ -40,6 +47,7 @@ public class Sponsorship extends DomainEntity {
 
 	@URL
 	@NotBlank
+	@NotNull
 	public String getBanner() {
 		return this.banner;
 	}
@@ -50,6 +58,7 @@ public class Sponsorship extends DomainEntity {
 
 	@URL
 	@NotBlank
+	@NotNull
 	public String getPage() {
 		return this.page;
 	}
@@ -58,6 +67,8 @@ public class Sponsorship extends DomainEntity {
 		this.page = page;
 	}
 
+	@NotNull
+	@Valid
 	public CreditCard getCreditCard() {
 		return this.creditCard;
 	}
