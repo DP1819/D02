@@ -1,0 +1,17 @@
+
+	En ambos modelos elimino el datatype de DATE
+	
+	Modelo Conceotual:
+	- cambio la multiplicidad de fixuptask y categoría poniendo que un fixupt. tenga que tener obligatoriamente una categoría.
+	
+	Modelo de Dominio UML:
+	- añado los unos en las multilpicidades
+	- Cambio admin por administrador	
+	- añado tickeable y lo conecto con complaint y curriculum  
+	- elimino el ticker del complaint
+	- elimino el ticker del curriculum
+	
+	
+	
+	
+	¿??¿¿?¿?¿?¿??¿¿¡PORQUE SPONSOR NO TIENE SCORE EN EL CONCEPTUAL?¿?¿?¿¿????¿?¿?¿¿?¿!¿?!¿?!¿?¿
