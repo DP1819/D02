@@ -50,15 +50,16 @@ public class Application extends DomainEntity {
 	}
 
 	@Digits(fraction = 0, integer = 2)
-	public Double getPrice() {
+	public double getPrice() {
 		return this.price;
 	}
 
-	public void setPrice(final Double price) {
+	public void setPrice(final double price) {
 		this.price = price;
 	}
 
 	@Past
+	@NotNull
 	public Date getMoment() {
 		return this.moment;
 	}
@@ -68,7 +69,8 @@ public class Application extends DomainEntity {
 	}
 
 	@NotBlank
-	@Pattern(regexp = "^(PENDING)|(ACCEPTED)|(REJECTED)$)")x //¿Sobra un paréntesis detrás del dollar?
+	@Pattern(regexp = "^(PENDING)|(ACCEPTED)|(REJECTED)$") //¿Sobra un paréntesis detrás del dollar?
+	@NotNull
 	public String getStatus() {
 		return this.status;
 	}
