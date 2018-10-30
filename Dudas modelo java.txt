@@ -1,0 +1,76 @@
+
+COMPROBAR  POR QUE EN EL UML NOS SALEN LAS NOTAS EN BLANCO
+
+TENEMOS QUE ARREGLAR EN EL UML QUE LAS NOTAS NO VEAN EN BLANCO
+
+
+
+---------------------------AUTHORITIES----------------
+
+Se deberia añadir las authorities del trabajo ?,solo esta admin y customer
+
+
+----------------------------ACTOR-------------------------------
+Comprobar en Actor si los pattern estan bien añadidos
+
+suspicious es derivado,pero de momento se deberia dejar sin hacer el metodo,el profesor nos dijo que de momento no se implementa
+
+-------------------------APPLICATION----------------------------
+En status sobra un parentesis en un PATTERN ¿?
+
+
+------------------------CATEGORY-------------------------------
+
+hemos añadido @notnull a fixuptask ,comprobar si es correcto
+
+
+-----------------------COMPLAINT--------------------------------
+
+Se podria navegar desde complaint a report ¿?
+le hemos puesto navegavilidad bidireccional COMPROBAR QUE ES CORRECTO
+
+
+En complaint hemos puesto que extiende de tickeable  ¿seria correcto?
+
+
+----------------------TICKEABLE------------------------------------
+
+hemos creado la clase
+
+hemos añadido al ticker @Column(unique=true) para que se compruebe que es unico
+
+
+--------------------CREDITCARD-------------------------------------
+
+hemos quitado el extends domainEntity ,los domainEntity no tienen ni necesitan una entidad ,le sobraria el extends no?
+
+En el UML HEMOS PUESTO {FUTURE} EN EXPIRATIONDATE ,SE TIENE QUE AÑADIR EN EL CONCEPTUAL TAMBIEN
+
+--------------------CURRICULUM-------------------------------------
+
+extiende de tickeable ,¿SERIA CORRECTO ?
+hemos eliminado el atributo ticker
+
+--------------------CUSTOMER--------------------------------------
+
+tal y como la nota del handyworker es derivada ,la del customer no lo deberia ser tambien NOSOTROS LO HEMOS AÑADIDO se deberia cambiar el conceptual tambien
+
+-------------------ENDORSABLE Y ENDORSEMENT------------------------------
+
+ESTA CLASE HAY QUE REHACERLA ENTERA JUNTO A ENDORSEMENT, NO ESTAMOS SEGURO DE SU TRADUCCION AL MODELADO JAVA
+
+-------------------ENDORSERRECORD---------------------------
+hemos añadido los pattern
+
+-------------------FINDER-----------------------------------
+
+hemos eliminado el atributo handyworker
+
+
+-----------------FISKUPTASK-----------------------------
+
+hemos eliminado los atributos de application y workplan ya que no son navegables
+
+hemos eliminado el set de category ya que solo tiene UNA UNICA categoria
+
+
