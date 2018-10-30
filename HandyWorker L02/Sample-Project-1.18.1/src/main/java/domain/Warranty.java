@@ -1,7 +1,10 @@
 
 package domain;
 
-import java.util.Set;
+import java.util.Collection;
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -16,13 +19,14 @@ public class Warranty extends DomainEntity {
 
 	//-----------Relaciones-------------
 
-	private Set<FixupTask>	fixupTasks;
-	private Set<Finder>		finders;
+	private Collection<FixupTask>	fixupTasks;
+	private Collection<Finder>		finders;
 
 
-	//-------------Getters y Setters-------
+	//-------------Getters y Collectionters-------
 
 	@NotBlank
+	@NotNull
 	public String getTitle() {
 		return this.title;
 	}
@@ -32,6 +36,7 @@ public class Warranty extends DomainEntity {
 	}
 
 	@NotBlank
+	@NotNull
 	public String getTerms() {
 		return this.terms;
 	}
@@ -41,6 +46,7 @@ public class Warranty extends DomainEntity {
 	}
 
 	@NotBlank
+	@NotNull
 	public String getLaws() {
 		return this.laws;
 	}
@@ -49,6 +55,7 @@ public class Warranty extends DomainEntity {
 		this.laws = laws;
 	}
 
+	@NotNull
 	public Boolean getDraft() {
 		return this.draft;
 	}
@@ -57,19 +64,23 @@ public class Warranty extends DomainEntity {
 		this.draft = draft;
 	}
 
-	public Set<FixupTask> getFixupTasks() {
+	@NotNull
+	@Valid
+	public Collection<FixupTask> getFixupTasks() {
 		return this.fixupTasks;
 	}
 
-	public void setFixupTasks(final Set<FixupTask> fixupTasks) {
+	public void setFixupTasks(final Collection<FixupTask> fixupTasks) {
 		this.fixupTasks = fixupTasks;
 	}
 
-	public Set<Finder> getFinders() {
+	@NotNull
+	@Valid
+	public Collection<Finder> getFinders() {
 		return this.finders;
 	}
 
-	public void setFinders(final Set<Finder> finders) {
+	public void setFinders(final Collection<Finder> finders) {
 		this.finders = finders;
 	}
 
