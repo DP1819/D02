@@ -1,4 +1,4 @@
-
+﻿
 	En ambos modelos elimino el datatype de DATE
 	
 	Modelo Conceotual:
@@ -10,8 +10,4 @@
 	- añado tickeable y lo conecto con complaint y curriculum  
 	- elimino el ticker del complaint
 	- elimino el ticker del curriculum
-	
-	
-	
-	
-	¿??¿¿?¿?¿?¿??¿¿¡PORQUE SPONSOR NO TIENE SCORE EN EL CONCEPTUAL?¿?¿?¿¿????¿?¿?¿¿?¿!¿?!¿?!¿?¿
+	- elimino el atributo score de sponsor porque no sice en ningún sitio que lo tenga que tener
