@@ -1,22 +1,27 @@
 
 package domain;
 
-import java.util.Set;
+import java.util.Collection;
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 public class Sponsor extends Actor {
 
 	//----------Relaciones----------
 
-	private Set<Sponsor>	sponsorships;
+	private Collection<Sponsor>	sponsorships;
 
 
 	//----------Getters y Setters------
 
-	public Set<Sponsor> getSponsorships() {
+	@Valid
+	@NotNull
+	public Collection<Sponsor> getSponsorships() {
 		return this.sponsorships;
 	}
 
-	public void setSponsorships(final Set<Sponsor> sponsorships) {
+	public void setSponsorships(final Collection<Sponsor> sponsorships) {
 		this.sponsorships = sponsorships;
 	}
 
