@@ -9,20 +9,25 @@ TENEMOS QUE ARREGLAR EN EL UML QUE LAS NOTAS NO VEAN EN BLANCO
 
 Se deberia añadir las authorities del trabajo ?,solo esta admin y customer
 
+RPablo - Hecho
 
 ----------------------------ACTOR-------------------------------
 Comprobar en Actor si los pattern estan bien añadidos
 
 suspicious es derivado,pero de momento se deberia dejar sin hacer el metodo,el profesor nos dijo que de momento no se implementa
 
+RPablo - Bien
+
 -------------------------APPLICATION----------------------------
 En status sobra un parentesis en un PATTERN ¿?
 
+RPablo - Corregido
 
 ------------------------CATEGORY-------------------------------
 
 hemos añadido @notnull a fixuptask ,comprobar si es correcto
 
+RPablo - Lo es
 
 -----------------------COMPLAINT--------------------------------
 
@@ -32,6 +37,7 @@ le hemos puesto navegavilidad bidireccional COMPROBAR QUE ES CORRECTO
 
 En complaint hemos puesto que extiende de tickeable  ¿seria correcto?
 
+RPablo - Hay que cambiar cosas de Complaint y Report. Es correcto que extienda de tickeable
 
 ----------------------TICKEABLE------------------------------------
 
@@ -39,6 +45,7 @@ hemos creado la clase
 
 hemos añadido al ticker @Column(unique=true) para que se compruebe que es unico
 
+RPablo - Bien
 
 --------------------CREDITCARD-------------------------------------
 
@@ -46,31 +53,44 @@ hemos quitado el extends domainEntity ,los domainEntity no tienen ni necesitan u
 
 En el UML HEMOS PUESTO {FUTURE} EN EXPIRATIONDATE ,SE TIENE QUE AÑADIR EN EL CONCEPTUAL TAMBIEN
 
+RPablo - La extensión sobra, el Future no lo pondría, su uso es desaconsejado, pondría una anotación que dijese que la fecha tiene que ser futura en el momento en que se crea la tarjeta.
+
 --------------------CURRICULUM-------------------------------------
 
 extiende de tickeable ,¿SERIA CORRECTO ?
 hemos eliminado el atributo ticker
 
+RPablo - Todo correcto
+
 --------------------CUSTOMER--------------------------------------
 
 tal y como la nota del handyworker es derivada ,la del customer no lo deberia ser tambien NOSOTROS LO HEMOS AÑADIDO se deberia cambiar el conceptual tambien
+
+RPablo - Ambas notas son derivadas, puesto a que no se puede escoger su valor. En el último modelo conceptual aparecen ambas como derivadas.
 
 -------------------ENDORSABLE Y ENDORSEMENT------------------------------
 
 ESTA CLASE HAY QUE REHACERLA ENTERA JUNTO A ENDORSEMENT, NO ESTAMOS SEGURO DE SU TRADUCCION AL MODELADO JAVA
 
+Ambas clases son correctas. Es una situación similar a la de, por ejemplo, Actor y Message
+
 -------------------ENDORSERRECORD---------------------------
 hemos añadido los pattern
+
+RPablo - Bien
 
 -------------------FINDER-----------------------------------
 
 hemos eliminado el atributo handyworker
 
+RPablo - El Finder debería poder navegar a HandyWorker por temas de seguridad y eficiencia.
 
 -----------------FISKUPTASK-----------------------------
 
 hemos eliminado los atributos de application y workplan ya que no son navegables
 
 hemos eliminado el set de category ya que solo tiene UNA UNICA categoria
+
+RPablo - Es recomendable que FixupTask pueda navegar hacia ambos, para así poder fácilmente listar las aplicaciones de una task y poder navegar desde FixupTask al HandyWorker que la tiene asignada a través del WorkPlan.
 
 

@@ -3,13 +3,13 @@ package domain;
 
 import java.util.Date;
 
-import javax.validation.constraints.Future;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.CreditCardNumber;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.Range;
 
-public class CreditCard{
+public class CreditCard {
 
 	//-----------Atributos-------------
 
@@ -22,6 +22,7 @@ public class CreditCard{
 
 	//---------Getters y Setters-------------
 	@NotBlank
+	@NotNull
 	public String getHolderName() {
 		return this.holderName;
 	}
@@ -31,6 +32,7 @@ public class CreditCard{
 	}
 
 	@NotBlank
+	@NotNull
 	public String getBrandName() {
 		return this.brandName;
 	}
@@ -48,7 +50,7 @@ public class CreditCard{
 		this.number = number;
 	}
 
-	@Future
+	@NotNull
 	public Date getExpirationDate() {
 		return this.expirationDate;
 	}

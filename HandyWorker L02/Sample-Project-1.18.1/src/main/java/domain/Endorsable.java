@@ -1,7 +1,7 @@
 
 package domain;
 
-import java.util.Set;
+import java.util.Collection;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -10,18 +10,18 @@ public class Endorsable extends Actor {
 
 	// Relationships
 
-	private Set<Endorsement>	endorsements;
+	private Collection<Endorsement>	endorsements;
 
 
 	//----------Getters y Setters
 
 	@NotNull
 	@Valid
-	public Set<Endorsement> getEndorsements() {
+	public Collection<Endorsement> getEndorsements() {
 		return this.endorsements;
 	}
 
-	public void setEndorsements(final Set<Endorsement> endorsements) {
+	public void setEndorsements(final Collection<Endorsement> endorsements) {
 		this.endorsements = endorsements;
 	}
 

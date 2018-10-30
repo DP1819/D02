@@ -1,6 +1,8 @@
 
 package domain;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Email;
@@ -17,10 +19,15 @@ public class EndorserRecord extends DomainEntity {
 	private String	phone;
 	private String	linkedProfile;
 
+	//------------Relaciones--------
+	
+	
+	private Curriculum curriculum;
 
 	//------------Getters y Setters-----
 
 	@NotBlank
+	@NotNull
 	public String getFullName() {
 		return this.fullName;
 	}
@@ -31,6 +38,7 @@ public class EndorserRecord extends DomainEntity {
 
 	@NotBlank
 	@URL
+	@NotNull
 	public String getPhoto() {
 		return this.photo;
 	}
@@ -41,7 +49,8 @@ public class EndorserRecord extends DomainEntity {
 
 	@NotBlank
 	@Email
-	@Pattern(regexp="^(\w+@(\w+(\.\w*)*)?)|(\w+( \w+)* <\w+@(\w+(\.\w*)*)?>)$")
+	@Pattern(regexp="^(\\w+@(\\w+(\\.\\w*)*)?)|(\\w+( \\w+)* <\\w+@(\\w+(\\.\\w*)*)?>)$")
+	@NotNull
 	public String getEmail() {
 		return this.email;
 	}
@@ -51,7 +60,8 @@ public class EndorserRecord extends DomainEntity {
 	}
 
 	@NotBlank
-	@Pattern(regexp = "^((\+\d{1,3})(\(\d{1,3}\))?)?\d{4,}$")
+	@Pattern(regexp = "^((\\+\\d{1,3})(\\(\\d{1,3}\\))?)?\\d{4,}$")
+	@NotNull
 	public String getPhone() {
 		return this.phone;
 	}
@@ -62,6 +72,7 @@ public class EndorserRecord extends DomainEntity {
 
 	@NotBlank
 	@URL
+	@NotNull
 	public String getLinkedProfile() {
 		return this.linkedProfile;
 	}
@@ -69,5 +80,17 @@ public class EndorserRecord extends DomainEntity {
 	public void setLinkedProfile(final String linkedProfile) {
 		this.linkedProfile = linkedProfile;
 	}
+
+	@NotNull
+	@Valid
+	public Curriculum getCurriculum() {
+		return curriculum;
+	}
+
+	public void setCurriculum(Curriculum curriculum) {
+		this.curriculum = curriculum;
+	}
+	
+	
 
 }

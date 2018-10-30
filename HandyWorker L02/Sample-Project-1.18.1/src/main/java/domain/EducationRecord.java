@@ -3,6 +3,8 @@ package domain;
 
 import java.util.Date;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -18,10 +20,15 @@ public class EducationRecord extends DomainEntity {
 	private String	institution;
 	private String	attachment;
 	private String	comments;
+	
+	//-----------Relaciones-----------
+	
+	private Curriculum curriculum;
 
 
 	//-----------Getters y Setters--------
 	@NotBlank
+	@NotNull
 	public String getDiplomaTitle() {
 		return this.diplomaTitle;
 	}
@@ -31,6 +38,7 @@ public class EducationRecord extends DomainEntity {
 	}
 
 	@Past
+	@NotNull
 	public Date getStart() {
 		return this.start;
 	}
@@ -48,6 +56,7 @@ public class EducationRecord extends DomainEntity {
 	}
 
 	@NotBlank
+	@NotNull
 	public String getInstitution() {
 		return this.institution;
 	}
@@ -73,4 +82,14 @@ public class EducationRecord extends DomainEntity {
 		this.comments = comments;
 	}
 
+	@NotNull
+	@Valid
+	public Curriculum getCurriculum() {
+		return curriculum;
+	}
+
+	public void setCurriculum(Curriculum curriculum) {
+		this.curriculum = curriculum;
+	}
+	
 }
