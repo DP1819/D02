@@ -28,9 +28,18 @@ public class FixupTask extends DomainEntity {
 	private Set<Complaint>		complaints;
 	private WorkPlan			workplan;
 	private Customer			customer;
+	private Set<Category>		categories;
 
 
 	//------------Getters y Setters-------
+
+	public Set<Category> getCategories() {
+		return this.categories;
+	}
+
+	public void setCategories(final Set<Category> categories) {
+		this.categories = categories;
+	}
 
 	public Set<Application> getApplications() {
 		return this.applications;

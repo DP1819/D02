@@ -22,9 +22,18 @@ public class Application extends DomainEntity {
 	//----------Relaciones---------
 
 	private HandyWorker	handyWorker;
+	private FixupTask	fixupTask;
 
 
 	//-----------Getters y Setters---------
+
+	public FixupTask getFixupTask() {
+		return this.fixupTask;
+	}
+
+	public void setFixupTask(final FixupTask fixupTask) {
+		this.fixupTask = fixupTask;
+	}
 
 	public HandyWorker getHandyWorker() {
 		return this.handyWorker;

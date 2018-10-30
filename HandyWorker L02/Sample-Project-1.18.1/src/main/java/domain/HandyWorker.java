@@ -15,32 +15,32 @@ public class HandyWorker extends Endorsable {
 
 	//-------------Relaciones---------
 
-	private Set<Curriculum>		curriculum;
-	private Set<Tutorial>		tutorials;
+	private Curriculum			curriculum;
+	private Tutorial			tutorials;
 	private Set<Note>			notes;
 	private Set<Application>	applications;
 
 
 	//-------------Getters y Setters----
 
-	public Set<Curriculum> getCurriculum() {
+	public Set<Note> getNotes() {
+		return this.notes;
+	}
+
+	public Curriculum getCurriculum() {
 		return this.curriculum;
 	}
 
-	public void setCurriculum(final Set<Curriculum> curriculum) {
+	public void setCurriculum(final Curriculum curriculum) {
 		this.curriculum = curriculum;
 	}
 
-	public Set<Tutorial> getTutorials() {
+	public Tutorial getTutorials() {
 		return this.tutorials;
 	}
 
-	public void setTutorials(final Set<Tutorial> tutorials) {
+	public void setTutorials(final Tutorial tutorials) {
 		this.tutorials = tutorials;
-	}
-
-	public Set<Note> getNotes() {
-		return this.notes;
 	}
 
 	public void setNotes(final Set<Note> notes) {
