@@ -20,9 +20,19 @@ public class Finder extends DomainEntity {
 
 	private HandyWorker		handyWorker;
 	private Set<Warranty>	warranties;
+	private Set<Category>	categories;
 
 
 	//--------------Getters y Setters------
+
+	public Set<Category> getCategories() {
+		return this.categories;
+	}
+
+	public void setCategories(final Set<Category> categories) {
+		this.categories = categories;
+	}
+
 	public Set<Warranty> getWarranties() {
 		return this.warranties;
 	}

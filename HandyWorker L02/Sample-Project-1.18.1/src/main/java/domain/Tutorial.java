@@ -21,18 +21,19 @@ public class Tutorial extends DomainEntity {
 	private String				pictures;
 
 	//-------------Relaciones--------------
-	private String				handyWorker;
+
+	private HandyWorker			handyWorker;
 	private Set<Sponsorship>	sponsorships;
 	private Set<Section>		section;
 
 
 	//-------------Getters y Setters--------
 
-	public String getHandyWorker() {
+	public HandyWorker getHandyWorker() {
 		return this.handyWorker;
 	}
 
-	public void setHandyWorker(final String handyWorker) {
+	public void setHandyWorker(final HandyWorker handyWorker) {
 		this.handyWorker = handyWorker;
 	}
 

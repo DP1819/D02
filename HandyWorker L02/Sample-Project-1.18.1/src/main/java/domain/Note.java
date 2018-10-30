@@ -20,6 +20,7 @@ public class Note extends DomainEntity {
 	private HandyWorker	handyWorker;
 	private Customer	customer;
 	private Referee		refee;
+	private Report		report;
 
 
 	//------------Getters y Setters-------
@@ -55,10 +56,6 @@ public class Note extends DomainEntity {
 	public void setReport(final Report report) {
 		this.report = report;
 	}
-
-
-	private Report	report;
-
 
 	@Past
 	public Date getMoment() {
