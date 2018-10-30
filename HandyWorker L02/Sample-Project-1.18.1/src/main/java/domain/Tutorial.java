@@ -20,8 +20,17 @@ public class Tutorial extends DomainEntity {
 	private String				title;
 	private String				summary;
 	private Collection<String>				pictures;
-
 	
+	
+	//-------------Relaciones--------------
+
+	private HandyWorker			handyWorker;
+	private Collection<Sponsorship>	sponsorships;
+	private Collection<Section>		section;
+
+
+	//-------------Getters y Setters--------
+
 	@NotNull
 	@Past
 	public Date getMoment() {
@@ -62,13 +71,6 @@ public class Tutorial extends DomainEntity {
 		this.pictures = pictures;
 	}
 	
-	//-------------Relaciones--------------
-
-	private HandyWorker			handyWorker;
-	private Collection<Sponsorship>	sponsorships;
-	private Collection<Section>		section;
-	
-
 	@NotNull
 	@Valid
 	public HandyWorker getHandyWorker() {
@@ -78,6 +80,8 @@ public class Tutorial extends DomainEntity {
 	public void setHandyWorker(final HandyWorker handyWorker) {
 		this.handyWorker = handyWorker;
 	}
+
+	
 
 	@NotNull
 	@Valid
