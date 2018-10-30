@@ -3,11 +3,13 @@ package domain;
 
 import java.util.Date;
 
+import javax.validation.constraints.Future;
+
 import org.hibernate.validator.constraints.CreditCardNumber;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.Range;
 
-public class CreditCard extends DomainEntity {
+public class CreditCard{
 
 	//-----------Atributos-------------
 
@@ -46,6 +48,7 @@ public class CreditCard extends DomainEntity {
 		this.number = number;
 	}
 
+	@Future
 	public Date getExpirationDate() {
 		return this.expirationDate;
 	}
