@@ -15,7 +15,7 @@ import org.hibernate.validator.constraints.URL;
 
 import security.UserAccount;
 
-public class Actor extends DomainEntity {
+public abstract class Actor extends DomainEntity {
 
 	//----------------Atributos-------------------
 
@@ -81,6 +81,7 @@ public class Actor extends DomainEntity {
 	}
 
 	@NotBlank
+	@NotNull
 	public String getName() {
 		return this.name;
 	}
@@ -98,6 +99,7 @@ public class Actor extends DomainEntity {
 	}
 
 	@NotBlank
+	@NotNull
 	public String getSurname() {
 		return this.surname;
 	}
@@ -117,7 +119,8 @@ public class Actor extends DomainEntity {
 
 	@NotBlank
 	@Email
-	@Pattern(regexp="^(\w+@(\w+(\.\w*)*)?)|(\w+( \w+)* <\w+@(\w+(\.\w*)*)?>)$")
+	@Pattern(regexp="^(\\w+@(\\w+(\\.\\w*)*)?)|(\\w+( \\w+)* <\\w+@(\\w+(\\.\\w*)*)?>)$")
+	@NotNull
 	public String getEmail() {
 		return this.email;
 	}
@@ -126,7 +129,7 @@ public class Actor extends DomainEntity {
 		this.email = email;
 	}
 
-	@Pattern(regexp = "^((\+\d{1,3})(\(\d{1,3}\))?)?\d{4,}$")
+	@Pattern(regexp = "^((\\+\\d{1,3})(\\(\\d{1,3}\\))?)?\\d{4,}$")
 	public String getPhone() {
 		return this.phone;
 	}
@@ -143,6 +146,7 @@ public class Actor extends DomainEntity {
 		this.address = address;
 	}
 
+	@NotNull
 	public Boolean getBanned() {
 		return this.banned;
 	}
@@ -151,6 +155,7 @@ public class Actor extends DomainEntity {
 		this.banned = banned;
 	}
 
+	@NotNull
 	public Boolean getSuspicious() {
 		return this.suspicious;
 	}
