@@ -1,7 +1,11 @@
 
 package domain;
 
-import java.util.Set;
+import java.util.Collection;
+
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -9,32 +13,26 @@ public class Category extends DomainEntity {
 
 	//--------Atributos-------------
 
-	private String		name;
-	//private String		child;
-	//private String		parent;
+	private String					name;
+	
 
 	//------------Relaciones-------------
 
-	private FixupTask	fixupTask;
-	private Set<Finder>	finders;
-
+	private Collection<FixupTask>	fixupTasks;
+	private Collection<Category>	childsCategories;
+	private Category				parentCategory;
 
 	//--------Getters y Setters-------
 
-	public Set<Finder> getFinders() {
-		return this.finders;
+
+	@Valid
+	@NotNull
+	public Collection<FixupTask> getFixupTasks() {
+		return this.fixupTasks;
 	}
 
-	public void setFinders(final Set<Finder> finders) {
-		this.finders = finders;
-	}
-
-	public FixupTask getFixupTask() {
-		return this.fixupTask;
-	}
-
-	public void setFixupTask(final FixupTask fixupTask) {
-		this.fixupTask = fixupTask;
+	public void setFixupTasks(final Collection<FixupTask> fixupTasks) {
+		this.fixupTasks = fixupTasks;
 	}
 
 	@NotBlank
@@ -45,5 +43,29 @@ public class Category extends DomainEntity {
 	public void setName(final String name) {
 		this.name = name;
 	}
+	
+	@Valid
+	@NotNull
+	public Collection<Category> getChildsCategories(){
+		return this.childsCategories;
+	}
+	
+	public void setChildsCategories(Collection<Category> childsCategories) {
+		this.childsCategories = childsCategories;
+	}
+	
+	@Valid
+	@NotNull
+	public Category getParentCategory() {
+		return parentCategory;
+	}
+
+	public void setParentCategory(Category parentCategory) {
+		this.parentCategory = parentCategory;
+	}
+
+	
+	
+	
 
 }

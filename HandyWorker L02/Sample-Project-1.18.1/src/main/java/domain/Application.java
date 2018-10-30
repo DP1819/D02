@@ -3,7 +3,9 @@ package domain;
 
 import java.util.Date;
 
+import javax.validation.Valid;
 import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
@@ -27,6 +29,8 @@ public class Application extends DomainEntity {
 
 	//-----------Getters y Setters---------
 
+	@Valid
+	@NotNull
 	public FixupTask getFixupTask() {
 		return this.fixupTask;
 	}
@@ -35,6 +39,8 @@ public class Application extends DomainEntity {
 		this.fixupTask = fixupTask;
 	}
 
+	@Valid
+	@NotNull
 	public HandyWorker getHandyWorker() {
 		return this.handyWorker;
 	}
@@ -62,7 +68,7 @@ public class Application extends DomainEntity {
 	}
 
 	@NotBlank
-	@Pattern(regexp = "^(PENDING)|(ACCEPTED)|(REJECTED)$)")
+	@Pattern(regexp = "^(PENDING)|(ACCEPTED)|(REJECTED)$)")x //¿Sobra un paréntesis detrás del dollar?
 	public String getStatus() {
 		return this.status;
 	}
@@ -87,6 +93,7 @@ public class Application extends DomainEntity {
 		this.customerComments = customerComments;
 	}
 
+	@Valid
 	public CreditCard getCreditCard() {
 		return this.creditCard;
 	}

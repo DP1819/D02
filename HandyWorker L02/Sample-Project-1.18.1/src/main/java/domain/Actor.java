@@ -1,12 +1,16 @@
 
 package domain;
 
-import java.util.Set;
+import java.util.Collection;
 
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.URL;
 
 import security.UserAccount;
@@ -28,22 +32,26 @@ public class Actor extends DomainEntity {
 
 	//--------------Relaciones-----------
 
-	private Set<Message>		messages;
-	private Set<Folder>			folders;
-	private Set<SocialProfile>	socialProfiles;
-	private UserAccount			userAccount;
+	private Collection<Message>				messages;
+	private Collection<Folder>				folders;
+	private Collection<SocialProfile>		socialProfiles;
+	private UserAccount						userAccount;
 
 
 	//-----------Getters y Setters------
 
-	public Set<Message> getMessages() {
+	@Valid
+	@NotNull
+	public Collection<Message> getMessages() {
 		return this.messages;
 	}
 
-	public void setMessages(final Set<Message> messages) {
+	public void setMessages(final Collection<Message> messages) {
 		this.messages = messages;
 	}
 
+	@Valid
+	@NotNull
 	public UserAccount getUserAccount() {
 		return this.userAccount;
 	}
@@ -52,19 +60,23 @@ public class Actor extends DomainEntity {
 		this.userAccount = userAccount;
 	}
 
-	public Set<Folder> getFolders() {
+	@Valid
+	@NotEmpty
+	public Collection<Folder> getFolders() {
 		return this.folders;
 	}
 
-	public void setFolders(final Set<Folder> folders) {
+	public void setFolders(final Collection<Folder> folders) {
 		this.folders = folders;
 	}
 
-	public Set<SocialProfile> getSocialProfiles() {
+	@Valid
+	@NotNull
+	public Collection<SocialProfile> getSocialProfiles() {
 		return this.socialProfiles;
 	}
 
-	public void setSocialProfiles(final Set<SocialProfile> socialProfiles) {
+	public void setSocialProfiles(final Collection<SocialProfile> socialProfiles) {
 		this.socialProfiles = socialProfiles;
 	}
 
@@ -105,6 +117,7 @@ public class Actor extends DomainEntity {
 
 	@NotBlank
 	@Email
+	@Pattern(regexp="^(\w+@(\w+(\.\w*)*)?)|(\w+( \w+)* <\w+@(\w+(\.\w*)*)?>)$")
 	public String getEmail() {
 		return this.email;
 	}
@@ -113,7 +126,7 @@ public class Actor extends DomainEntity {
 		this.email = email;
 	}
 
-	@Pattern(regexp = "^[0-9]{4,}$")
+	@Pattern(regexp = "^((\+\d{1,3})(\(\d{1,3}\))?)?\d{4,}$")
 	public String getPhone() {
 		return this.phone;
 	}

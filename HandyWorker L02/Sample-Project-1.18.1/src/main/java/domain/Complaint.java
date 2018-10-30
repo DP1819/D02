@@ -1,39 +1,45 @@
 
 package domain;
 
-import java.util.Set;
+import java.util.Collection;
 
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.URL;
 
-public class Complaint extends DomainEntity {
+
+public class Complaint extends Ticketable {
 
 	//----------Atributos-----------
 
-	private String		ticker;
-	private String		moment;
-	private String		description;
-	private String		attachments;
+	private String					moment;
+	private String					description;
+	private Collection<String>		attachments;
 
 	//----------Relaciones---------
 
-	private Set<Report>	reports;
+	private Collection<Report>	reports;
 	private Customer	customer;
 	private FixupTask	fixuptask;
 
 
-	//Getters y Setters
+	//----------Getters y Setters--------------------
 
-	public Set<Report> getReports() {
+	@Valid
+	@NotNull
+	public Collection<Report> getReports() {
 		return this.reports;
 	}
 
-	public void setReports(final Set<Report> reports) {
+	public void setReports(final Collection<Report> reports) {
 		this.reports = reports;
 	}
 
+	@Valid
+	@NotNull
 	public Customer getCustomer() {
 		return this.customer;
 	}
@@ -42,6 +48,8 @@ public class Complaint extends DomainEntity {
 		this.customer = customer;
 	}
 
+	@Valid
+	@NotNull
 	public FixupTask getFixuptask() {
 		return this.fixuptask;
 	}
@@ -50,14 +58,6 @@ public class Complaint extends DomainEntity {
 		this.fixuptask = fixuptask;
 	}
 
-	@NotBlank
-	public String getTicker() {
-		return this.ticker;
-	}
-
-	public void setTicker(final String ticker) {
-		this.ticker = ticker;
-	}
 
 	@Past
 	public String getMoment() {
@@ -77,12 +77,12 @@ public class Complaint extends DomainEntity {
 		this.description = description;
 	}
 
-	@URL
-	public String getAttachments() {
+	@NotNull
+	public Collection<String> getAttachments() {
 		return this.attachments;
 	}
 
-	public void setAttachments(final String attachments) {
+	public void setAttachments(final Collection<String> attachments) {
 		this.attachments = attachments;
 	}
 
