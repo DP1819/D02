@@ -13,7 +13,7 @@ public class Folder extends DomainEntity {
 	//------------Atributos---------
 
 	private String				name;
-	private Boolean				system;
+	private boolean				system;
 
 	//------------Relaciones----------
 
@@ -26,6 +26,7 @@ public class Folder extends DomainEntity {
 	//----------Getters y Setters-----
 
 	@NotBlank
+	@NotNull
 	public String getName() {
 		return this.name;
 	}
@@ -34,14 +35,16 @@ public class Folder extends DomainEntity {
 		this.name = name;
 	}
 
-	public Boolean getSystem() {
+	public boolean getSystem() {
 		return this.system;
 	}
 
-	public void setSystem(final Boolean system) {
+	public void setSystem(final boolean system) {
 		this.system = system;
 	}
 
+	@NotNull
+	@Valid
 	public Collection<Message> getMessages() {
 		return this.messages;
 	}
@@ -50,6 +53,8 @@ public class Folder extends DomainEntity {
 		this.messages = messages;
 	}
 
+	@NotNull
+	@Valid
 	public Collection<Folder> getChildFolder() {
 		return this.childFolder;
 	}
@@ -58,6 +63,7 @@ public class Folder extends DomainEntity {
 		this.childFolder = childFolder;
 	}
 
+	@Valid
 	public Folder getParentFolder() {
 		return this.parentFolder;
 	}
