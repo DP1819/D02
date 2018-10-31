@@ -4,8 +4,10 @@ package domain;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.validation.Valid;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -27,6 +29,8 @@ public class FixupTask extends Ticketable {
 	private Customer				customer;
 	private Category				category;
 	private Warranty				warranty;
+	private Collection<Application> applications;
+	private WorkPlan workPlan;
 
 
 	//------------Getters y Setters-------
@@ -116,4 +120,23 @@ public class FixupTask extends Ticketable {
 		this.end = end;
 	}
 
+	@NotNull
+	@Valid
+	public Collection<Application> getApplications() {
+		return applications;
+	}
+
+	public void setApplications(Collection<Application> applications) {
+		this.applications = applications;
+	}
+
+	@Valid
+	public WorkPlan getWorkPlan() {
+		return workPlan;
+	}
+
+	public void setWorkPlan(WorkPlan workPlan) {
+		this.workPlan = workPlan;
+	}
+	
 }
