@@ -1,0 +1,2 @@
+- Se ha puesto la multiplicidad de Referee en Referee-Complaint como 0..1, puesto a que no es necesario que la complaint tenga un referee al crearse.
+- Se ha eliminado la relación entre Complaint y Customer. Esto se hece debido a que el customer que escribe la complaint, se relaciona con esta a través de la FixupTask.
