@@ -1,6 +1,7 @@
 
 package domain;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -53,6 +54,8 @@ public class SocialProfile extends DomainEntity {
 		this.profile = profile;
 	}
 
+	@NotNull
+	@Valid
 	public Actor getActor() {
 		return actor;
 	}
