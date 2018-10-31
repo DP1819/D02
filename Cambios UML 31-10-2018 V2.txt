@@ -1,0 +1,1 @@
+- Se han eliminado las relaciones de Note con los actores y se ha sustituido por una anotción que indica qué actores pueden poner y comentar notes.
