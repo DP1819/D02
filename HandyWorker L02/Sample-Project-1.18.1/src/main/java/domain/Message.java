@@ -4,10 +4,13 @@ package domain;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 
 public class Message extends DomainEntity {
 
@@ -26,6 +29,9 @@ public class Message extends DomainEntity {
 
 	//----------Getters y Setters------
 
+	@NotNull
+	@NotEmpty
+	@Valid
 	public Collection<Folder> getFolders() {
 		return this.folders;
 	}
@@ -35,6 +41,7 @@ public class Message extends DomainEntity {
 	}
 
 	@Past
+	@NotNull
 	public Date getMoment() {
 		return this.moment;
 	}
@@ -44,6 +51,7 @@ public class Message extends DomainEntity {
 	}
 
 	@NotBlank
+	@NotNull
 	public String getSubject() {
 		return this.subject;
 	}
@@ -53,6 +61,7 @@ public class Message extends DomainEntity {
 	}
 
 	@NotBlank
+	@NotNull
 	public String getBody() {
 		return this.body;
 	}
@@ -63,6 +72,7 @@ public class Message extends DomainEntity {
 
 	@NotBlank
 	@Pattern(regexp = "^(HIGH)|(NEUTRAL)|(LOW)$")
+	@NotNull
 	public String getPriority() {
 		return this.priority;
 	}
@@ -71,6 +81,7 @@ public class Message extends DomainEntity {
 		this.priority = priority;
 	}
 
+	@NotNull
 	public Collection<String> getTags() {
 		return this.tags;
 	}
@@ -79,6 +90,8 @@ public class Message extends DomainEntity {
 		this.tags = tags;
 	}
 
+	@Valid
+	@NotNull
 	public Actor getSender() {
 		return this.sender;
 	}
@@ -87,6 +100,8 @@ public class Message extends DomainEntity {
 		this.sender = sender;
 	}
 
+	@Valid
+	@NotNull
 	public Actor getReceiver() {
 		return this.receiver;
 	}
