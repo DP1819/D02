@@ -1,6 +1,7 @@
 
 package domain;
 
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Email;
@@ -21,6 +22,7 @@ public class PersonalRecord extends DomainEntity {
 	//-----------Getters y Setters------
 
 	@NotBlank
+	@NotNull
 	public String getFullName() {
 		return this.fullName;
 	}
@@ -31,6 +33,7 @@ public class PersonalRecord extends DomainEntity {
 
 	@NotBlank
 	@URL
+	@NotNull
 	public String getPhoto() {
 		return this.photo;
 	}
@@ -41,6 +44,8 @@ public class PersonalRecord extends DomainEntity {
 
 	@NotBlank
 	@Email
+	@NotNull
+	@Pattern(regexp="^(\\w+@(\\w+(\\.\\w*)*)?)|(\\w+( \\w+)* <\\w+@(\\w+(\\.\\w*)*)?>)$")
 	public String getEmail() {
 		return this.email;
 	}
@@ -51,6 +56,7 @@ public class PersonalRecord extends DomainEntity {
 
 	@NotBlank
 	@Pattern(regexp = "^((\\+\\d{1,3})(\\(\\d{1,3}\\))?)?\\d{4,}$")
+	@NotNull
 	public String getPhone() {
 		return this.phone;
 	}
@@ -61,6 +67,7 @@ public class PersonalRecord extends DomainEntity {
 
 	@NotBlank
 	@URL
+	@NotNull
 	public String getLinkedlnProfile() {
 		return this.linkedlnProfile;
 	}
