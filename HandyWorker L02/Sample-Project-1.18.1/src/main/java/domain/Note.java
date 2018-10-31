@@ -4,52 +4,29 @@ package domain;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 
 public class Note extends DomainEntity {
 
 	//-----------Atributos-----------
 
 	private Date		moment;
-	private String		writerComment;
-	private Collection<String>		otherComments;
+	private Collection<String>		comments;
 
 	//----------Relaciones-----------
 
-	private HandyWorker	handyWorker;
-	private Customer	customer;
-	private Referee		refee;
 	private Report		report;
 
 
 	//------------Getters y Setters-------
 
-	public HandyWorker getHandyWorker() {
-		return this.handyWorker;
-	}
-
-	public void setHandyWorker(final HandyWorker handyWorker) {
-		this.handyWorker = handyWorker;
-	}
-
-	public Customer getCustomer() {
-		return this.customer;
-	}
-
-	public void setCustomer(final Customer customer) {
-		this.customer = customer;
-	}
-
-	public Referee getRefee() {
-		return this.refee;
-	}
-
-	public void setRefee(final Referee refee) {
-		this.refee = refee;
-	}
-
+	@NotNull
+	@Valid
 	public Report getReport() {
 		return this.report;
 	}
@@ -59,6 +36,7 @@ public class Note extends DomainEntity {
 	}
 
 	@Past
+	@NotNull
 	public Date getMoment() {
 		return this.moment;
 	}
@@ -66,22 +44,16 @@ public class Note extends DomainEntity {
 	public void setMoment(final Date moment) {
 		this.moment = moment;
 	}
-
+	
+	@NotNull
 	@NotBlank
-	public String getWriterComment() {
-		return this.writerComment;
+	@NotEmpty
+	public Collection<String> getComments() {
+		return this.comments;
 	}
 
-	public void setWriterComment(final String writerComment) {
-		this.writerComment = writerComment;
-	}
-
-	public Collection<String> getOtherComments() {
-		return this.otherComments;
-	}
-
-	public void setOtherComments(final Collection<String> otherComments) {
-		this.otherComments = otherComments;
+	public void setComments(final Collection<String> comments) {
+		this.comments = comments;
 	}
 
 }
