@@ -3,6 +3,9 @@ package domain;
 
 import java.util.Collection;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+
 import org.hibernate.validator.constraints.NotBlank;
 
 public class Folder extends DomainEntity {
@@ -17,6 +20,7 @@ public class Folder extends DomainEntity {
 	private Collection<Message>	messages;
 	private Collection<Folder>	childFolder;
 	private Folder				parentFolder;
+	private Actor actor;
 
 
 	//----------Getters y Setters-----
@@ -62,4 +66,14 @@ public class Folder extends DomainEntity {
 		this.parentFolder = parentFolder;
 	}
 
+	@NotNull
+	@Valid
+	public Actor getActor() {
+		return actor;
+	}
+
+	public void setActor(Actor actor) {
+		this.actor = actor;
+	}
+	
 }

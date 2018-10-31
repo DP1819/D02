@@ -14,7 +14,12 @@ public class SocialProfile extends DomainEntity {
 	private String	networkName;
 	private String	profile;
 
-
+	
+	//--------Relaciones----------
+	
+	private Actor actor;
+	
+	
 	//--------Getters y Setters------
 
 	@NotBlank
@@ -48,4 +53,12 @@ public class SocialProfile extends DomainEntity {
 		this.profile = profile;
 	}
 
+	public Actor getActor() {
+		return actor;
+	}
+
+	public void setActor(Actor actor) {
+		this.actor = actor;
+	}
+	
 }
