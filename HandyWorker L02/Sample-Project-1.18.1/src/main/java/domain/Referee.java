@@ -3,24 +3,20 @@ package domain;
 
 import java.util.Collection;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+
 public class Referee extends Actor {
 
 	//----------Relaciones-----------
 
-	private Collection<Note>	notes;
 	private Collection<Report>	reports;
 
 
 	//----------Getters y Setters-------
-
-	public Collection<Note> getNotes() {
-		return this.notes;
-	}
-
-	public void setNotes(final Collection<Note> notes) {
-		this.notes = notes;
-	}
-
+	
+	@NotNull
+	@Valid
 	public Collection<Report> getReports() {
 		return this.reports;
 	}
