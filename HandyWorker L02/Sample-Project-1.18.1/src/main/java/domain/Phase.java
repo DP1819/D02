@@ -3,6 +3,9 @@ package domain;
 
 import java.util.Date;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+
 import org.hibernate.validator.constraints.NotBlank;
 
 public class Phase extends DomainEntity {
@@ -17,11 +20,12 @@ public class Phase extends DomainEntity {
 	//------------Relaciones-----------
 
 	private WorkPlan	workPlan;
-
+	
 
 	//---------Getters y Setters-----
 
 	@NotBlank
+	@NotNull
 	public String getTitle() {
 		return this.title;
 	}
@@ -31,6 +35,7 @@ public class Phase extends DomainEntity {
 	}
 
 	@NotBlank
+	@NotNull
 	public String getDescription() {
 		return this.description;
 	}
@@ -39,6 +44,7 @@ public class Phase extends DomainEntity {
 		this.description = description;
 	}
 
+	@NotNull
 	public Date getStart() {
 		return this.start;
 	}
@@ -47,6 +53,7 @@ public class Phase extends DomainEntity {
 		this.start = start;
 	}
 
+	@NotNull
 	public Date getEnd() {
 		return this.end;
 	}
@@ -55,6 +62,8 @@ public class Phase extends DomainEntity {
 		this.end = end;
 	}
 
+	@NotNull
+	@Valid
 	public WorkPlan getWorkPlan() {
 		return this.workPlan;
 	}
