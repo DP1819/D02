@@ -3,6 +3,7 @@ package domain;
 
 import java.util.Date;
 
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -15,7 +16,7 @@ public class ProfessionalRecord extends DomainEntity {
 	private String	company;
 	private Date	start;
 	private Date	end;
-	private String	institution;
+	private String	role;
 	private String	attachment;
 	private String	comments;
 
@@ -23,6 +24,7 @@ public class ProfessionalRecord extends DomainEntity {
 	//-----------Getters y Setters-----
 
 	@NotBlank
+	@NotNull
 	public String getCompany() {
 		return this.company;
 	}
@@ -32,6 +34,7 @@ public class ProfessionalRecord extends DomainEntity {
 	}
 
 	@Past
+	@NotNull
 	public Date getStart() {
 		return this.start;
 	}
@@ -49,12 +52,13 @@ public class ProfessionalRecord extends DomainEntity {
 	}
 
 	@NotBlank
-	public String getInstitution() {
-		return this.institution;
+	@NotNull
+	public String getRole() {
+		return this.role;
 	}
 
-	public void setInstitution(final String institution) {
-		this.institution = institution;
+	public void setRole(final String role) {
+		this.role = role;
 	}
 
 	@URL
