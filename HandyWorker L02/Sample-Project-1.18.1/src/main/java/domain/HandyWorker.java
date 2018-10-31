@@ -2,7 +2,9 @@
 package domain;
 
 import java.util.Collection;
-import java.util.Set;
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.Range;
@@ -12,7 +14,7 @@ public class HandyWorker extends Endorsable {
 	//------------Atributos---------
 
 	private String					make;
-	private Double					score;
+	private double					score;
 
 	//-------------Relaciones---------
 
@@ -26,10 +28,17 @@ public class HandyWorker extends Endorsable {
 
 	//-------------Getters y Setters----
 
+	@NotNull
+	@Valid
 	public Collection<Note> getNotes() {
 		return this.notes;
 	}
+	
+	public void setNotes(final Collection<Note> notes) {
+		this.notes = notes;
+	}
 
+	@Valid
 	public Curriculum getCurriculum() {
 		return this.curriculum;
 	}
@@ -38,11 +47,8 @@ public class HandyWorker extends Endorsable {
 		this.curriculum = curriculum;
 	}
 
-	public void setNotes(final Set<Note> notes) {
-		this.notes = notes;
-	}
-
 	@NotBlank
+	@NotNull
 	public String getMake() {
 		return this.make;
 	}
@@ -52,14 +58,16 @@ public class HandyWorker extends Endorsable {
 	}
 
 	@Range(min = -1, max = 1)
-	public Double getScore() {
+	public double getScore() {
 		return this.score;
 	}
 
-	public void setScore(final Double score) {
+	public void setScore(final double score) {
 		this.score = score;
 	}
 
+	@NotNull
+	@Valid
 	public Finder getFinder() {
 		return this.finder;
 	}
@@ -68,6 +76,8 @@ public class HandyWorker extends Endorsable {
 		this.finder = finder;
 	}
 
+	@NotNull
+	@Valid
 	public Collection<Tutorial> getTutorials() {
 		return this.tutorials;
 	}
@@ -76,6 +86,8 @@ public class HandyWorker extends Endorsable {
 		this.tutorials = tutorials;
 	}
 
+	@NotNull
+	@Valid
 	public Collection<Application> getApplications() {
 		return this.applications;
 	}
@@ -84,16 +96,14 @@ public class HandyWorker extends Endorsable {
 		this.applications = applications;
 	}
 
+	@NotNull
+	@Valid
 	public Collection<WorkPlan> getWorkPlans() {
 		return this.workPlans;
 	}
 
 	public void setWorkPlans(final Collection<WorkPlan> workPlans) {
 		this.workPlans = workPlans;
-	}
-
-	public void setNotes(final Collection<Note> notes) {
-		this.notes = notes;
 	}
 
 }
