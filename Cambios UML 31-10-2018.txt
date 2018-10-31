@@ -1,0 +1,7 @@
+- Se ha corregido el UML de tal forma que coincida con el Modelo Conceptual, puesto a que en gran parte, el UML es una copia del modelo conceptual.
+- Actor se ha puesto como navegable en varias asociaciones para facilitar las comprobaciones de seguridad. Estas asociaciones son las que tiene Actor con Folder y SocialProfile.
+- La generalización en Endorsable, es disjoint, no overlaping. No se puede ser HandyWorker y Customer al mismo tiempo.
+- Sponsorship es navegable en la asociación Tutorial-Sponsorship. Esto se hace para facilitar el acceso desde Tutorial a sus respectivos Sponsorship,, y así escoger el banner más fácilmente.
+- Application navegable desde FixupTask. Así el Customer puede acceder a las Application desde la task que ha creado.
+- WorkPlan navegable desde FixupTask. Así se puede acceder desde FixupTask al HandyWorker encargado de hacerla a través del WorkPlan.
+
