@@ -15,7 +15,7 @@ public class Message extends DomainEntity {
 	private String				subject;
 	private String				body;
 	private String				priority;
-	private String				tags;
+	private Collection<String>				tags;
 
 	//-------------Relaciones---------
 
