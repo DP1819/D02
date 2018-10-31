@@ -1,7 +1,11 @@
 
 package domain;
 
+import java.util.Collection;
+
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.Range;
@@ -14,19 +18,20 @@ public class Settings extends DomainEntity {
 	private String	systemName;
 	private String	banner;
 	private String	welcomeMessage;
-	private String	spamWords;
+	private Collection<String>	spamWords;
 	private int		vat;
 	private String	countryCode;
-	private String	creditCardMakes;
+	private Collection<String>	creditCardMakes;
 	private int		finderCacheHours;
 	private int		maxCacheResults;
-	private String	positiveWords;
-	private String	negativeWords;
+	private Collection<String>	positiveWords;
+	private Collection<String>	negativeWords;
 
 
 	//--------Getters y Setters-------
 
 	@NotBlank
+	@NotNull
 	public String getSystemName() {
 		return this.systemName;
 	}
@@ -37,6 +42,7 @@ public class Settings extends DomainEntity {
 
 	@NotBlank
 	@URL
+	@NotNull
 	public String getBanner() {
 		return this.banner;
 	}
@@ -46,6 +52,7 @@ public class Settings extends DomainEntity {
 	}
 
 	@NotBlank
+	@NotNull
 	public String getWelcomeMessage() {
 		return this.welcomeMessage;
 	}
@@ -55,11 +62,12 @@ public class Settings extends DomainEntity {
 	}
 
 	@NotBlank
-	public String getSpamWords() {
+	@NotNull
+	public Collection<String> getSpamWords() {
 		return this.spamWords;
 	}
 
-	public void setSpamWords(final String spamWords) {
+	public void setSpamWords(final Collection<String> spamWords) {
 		this.spamWords = spamWords;
 	}
 
@@ -73,6 +81,7 @@ public class Settings extends DomainEntity {
 	}
 
 	@NotBlank
+	@Pattern(regexp="\\+\\d{1,3}")
 	public String getCountryCode() {
 		return this.countryCode;
 	}
@@ -82,11 +91,12 @@ public class Settings extends DomainEntity {
 	}
 
 	@NotBlank
-	public String getCreditCardMakes() {
+	@NotNull
+	public Collection<String> getCreditCardMakes() {
 		return this.creditCardMakes;
 	}
 
-	public void setCreditCardMakes(final String creditCardMakes) {
+	public void setCreditCardMakes(final Collection<String> creditCardMakes) {
 		this.creditCardMakes = creditCardMakes;
 	}
 
@@ -108,19 +118,21 @@ public class Settings extends DomainEntity {
 		this.maxCacheResults = maxCacheResults;
 	}
 
-	public String getPositiveWords() {
+	@NotNull
+	public Collection<String> getPositiveWords() {
 		return this.positiveWords;
 	}
 
-	public void setPositiveWords(final String positiveWords) {
+	public void setPositiveWords(final Collection<String> positiveWords) {
 		this.positiveWords = positiveWords;
 	}
 
-	public String getNegativeWords() {
+	@NotNull
+	public Collection<String> getNegativeWords() {
 		return this.negativeWords;
 	}
 
-	public void setNegativeWords(final String negativeWords) {
+	public void setNegativeWords(final Collection<String> negativeWords) {
 		this.negativeWords = negativeWords;
 	}
 
