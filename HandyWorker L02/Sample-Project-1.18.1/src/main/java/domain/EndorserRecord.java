@@ -60,7 +60,7 @@ public class EndorserRecord extends DomainEntity {
 	}
 
 	@NotBlank
-	@Pattern(regexp = "^((\\+\\d{1,3})(\\(\\d{1,3}\\))?)?\\d{4,}$")
+	@Pattern(regexp = "^(\\+\\d{1,3}(\\(\\d{1,3}\\))?)\\d{4,})$")
 	@NotNull
 	public String getPhone() {
 		return this.phone;
