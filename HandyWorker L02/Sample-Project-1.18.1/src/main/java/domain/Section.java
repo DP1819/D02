@@ -3,7 +3,9 @@ package domain;
 
 import java.util.Collection;
 
+import javax.validation.Valid;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.URL;
@@ -24,6 +26,8 @@ public class Section extends DomainEntity {
 
 	//-----------Getters y Setters-------
 
+	@NotNull
+	@Valid
 	public Tutorial getTutorial() {
 		return this.tutorial;
 	}
@@ -33,6 +37,7 @@ public class Section extends DomainEntity {
 	}
 
 	@NotBlank
+	@NotNull
 	public String getTitle() {
 		return this.title;
 	}
@@ -42,6 +47,7 @@ public class Section extends DomainEntity {
 	}
 
 	@NotBlank
+	@NotNull
 	public String getText() {
 		return this.text;
 	}
