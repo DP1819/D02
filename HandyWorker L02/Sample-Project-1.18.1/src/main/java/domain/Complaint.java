@@ -23,31 +23,20 @@ public class Complaint extends Ticketable {
 
 	//----------Relaciones---------
 
-	private Collection<Report>	reports;
-	private Customer	customer;
+	private Report	report;
 	private FixupTask	fixuptask;
+	private Referee referee;
 
 
 	//----------Getters y Setters--------------------
 
 	@Valid
-	@NotNull
-	public Collection<Report> getReports() {
-		return this.reports;
+	public Report getReport() {
+		return this.report;
 	}
 
-	public void setReports(final Collection<Report> reports) {
-		this.reports = reports;
-	}
-
-	@Valid
-	@NotNull
-	public Customer getCustomer() {
-		return this.customer;
-	}
-
-	public void setCustomer(final Customer customer) {
-		this.customer = customer;
+	public void setReport(Report report) {
+		this.report = report;
 	}
 
 	@Valid
@@ -89,6 +78,15 @@ public class Complaint extends Ticketable {
 
 	public void setAttachments(final Collection<String> attachments) {
 		this.attachments = attachments;
+	}
+
+	@Valid
+	public Referee getReferee() {
+		return referee;
+	}
+
+	public void setReferee(Referee referee) {
+		this.referee = referee;
 	}
 
 }
