@@ -6,7 +6,7 @@ import java.util.Collection;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
-public class Endorsable extends Actor {
+public abstract class Endorsable extends Actor {
 
 	// Relationships
 
