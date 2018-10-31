@@ -4,6 +4,8 @@ package domain;
 import java.util.Collection;
 import java.util.Date;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -16,11 +18,10 @@ public class Report extends DomainEntity {
 	private Date				moment;
 	private String				description;
 	private Collection<String>	attachments;
-	private Boolean				draft;
+	private boolean				draft;
 
 	//-----------Relaciones----------
 
-	private Referee				referee;
 	private Collection<Note>	notes;
 	private Complaint			complaint;
 
@@ -28,26 +29,17 @@ public class Report extends DomainEntity {
 	//----------Getters y Setters-------
 
 	@Past
+	@NotNull
 	public Date getMoment() {
 		return this.moment;
 	}
 
-	public Referee getReferee() {
-		return this.referee;
+	public void setMoment(final Date moment) {
+		this.moment = moment;
 	}
 
-	public void setReferee(final Referee referee) {
-		this.referee = referee;
-	}
-
-	public Collection<Note> getNote() {
-		return this.notes;
-	}
-
-	public void setNote(final Collection<Note> notes) {
-		this.notes = notes;
-	}
-
+	@NotNull
+	@Valid
 	public Collection<Note> getNotes() {
 		return this.notes;
 	}
@@ -56,6 +48,8 @@ public class Report extends DomainEntity {
 		this.notes = notes;
 	}
 
+	@NotNull
+	@Valid
 	public Complaint getComplaint() {
 		return this.complaint;
 	}
@@ -65,6 +59,7 @@ public class Report extends DomainEntity {
 	}
 
 	@URL
+	@NotNull
 	public Collection<String> getAttachments() {
 		return this.attachments;
 	}
@@ -73,11 +68,8 @@ public class Report extends DomainEntity {
 		this.attachments = attachments;
 	}
 
-	public void setMoment(final Date moment) {
-		this.moment = moment;
-	}
-
 	@NotBlank
+	@NotNull
 	public String getDescription() {
 		return this.description;
 	}
@@ -86,11 +78,11 @@ public class Report extends DomainEntity {
 		this.description = description;
 	}
 
-	public Boolean getDraft() {
+	public boolean getDraft() {
 		return this.draft;
 	}
 
-	public void setDraft(final Boolean draft) {
+	public void setDraft(final boolean draft) {
 		this.draft = draft;
 	}
 
