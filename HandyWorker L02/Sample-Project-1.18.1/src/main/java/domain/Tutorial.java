@@ -25,6 +25,7 @@ public class Tutorial extends DomainEntity {
 
 	private HandyWorker			handyWorker;
 	private Collection<Section>	sections;
+	private Collection<Sponsorship> sponsorships;
 
 
 	//-------------Getters y Setters--------
@@ -88,5 +89,28 @@ public class Tutorial extends DomainEntity {
 	public void setSection(final Collection<Section> sections) {
 		this.sections = sections;
 	}
+	
+	@NotNull
+	@Valid
+	@NotEmpty
+	public Collection<Section> getSections() {
+		return sections;
+	}
 
+	public void setSections(Collection<Section> sections) {
+		this.sections = sections;
+	}
+
+	@NotNull
+	@Valid
+	public Collection<Sponsorship> getSponsorships() {
+		return sponsorships;
+	}
+
+	public void setSponsorships(Collection<Sponsorship> sponsorships) {
+		this.sponsorships = sponsorships;
+	}
+
+	
+	
 }
