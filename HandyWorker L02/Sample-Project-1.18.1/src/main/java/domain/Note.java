@@ -14,7 +14,7 @@ public class Note extends DomainEntity {
 
 	private Date		moment;
 	private String		writerComment;
-	private String		otherComments;
+	private Collection<String>		otherComments;
 
 	//----------Relaciones-----------
 
